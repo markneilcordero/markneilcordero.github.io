@@ -42,18 +42,25 @@
                             <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active" data-bs-interval="9000">
-                                        <img src="images/sample_image1.jpg" class="card-img-top" alt="">
+                                        <img src="images/todo_list_app/image1.png" class="card-img-top" alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="6000">
-                                        <img src="images/sample_image2.jpg" class="card-img-top" alt="">
+                                        <img src="images/todo_list_app/image2.png" class="card-img-top" alt="">
                                     </div>
                                     <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/sample_image3.jpg" class="card-img-top" alt="">
+                                        <img src="images/todo_list_app/image3.png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="9000">
+                                        <img src="images/todo_list_app/image4.png" class="card-img-top" alt="">
+                                    </div>
+                                    <div class="carousel-item" data-bs-interval="9000">
+                                        <img src="images/todo_list_app/image5.png" class="card-img-top" alt="">
                                     </div>
                                 </div>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">1 Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Discover the power of simplicity with my Todo List app, a basic yet efficient project crafted using Laravel. Embrace the essence of minimalist design as you manage tasks effortlessly through intuitive CRUD operations. Stay focused, organized, and in control of your daily agenda with this straightforward and user-friendly task management solution.</p>
+                                <a href="todo_list_app.html" class="btn btn-primary">See More..</a>
                             </div>
                         </div>
                     </div>
@@ -301,11 +308,11 @@
                 </div>
                 <div class="py-5">
                     <ul class="pagination justify-content-center">
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
                         <li class="page-item"><a class="page-link" href="#" onclick="showProject(1)">1</a></li>
                         <li class="page-item"><a class="page-link" href="#" onclick="showProject(2)">2</a></li>
                         <li class="page-item"><a class="page-link" href="#" onclick="showProject(3)">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -453,11 +460,11 @@
 <script>
 for (let x = 0; x < 6; x++) {
     let pages = document.getElementsByClassName("page");
-    document.getElementsByClassName("page-item")[1].classList.add("active");
+    document.getElementsByClassName("page-item")[0].classList.add("active");
     pages[x].style.display = "block";
 }
 function showProject(page) {
-    document.getElementsByClassName("page-item")[1].classList.remove("active");
+    document.getElementsByClassName("page-item")[0].classList.remove("active");
     let pages = document.getElementsByClassName("page");
     for (let count = 0; count < pages.length; count++) {
         pages[count].style.display = "none";
@@ -466,23 +473,23 @@ function showProject(page) {
         for (let x = 0; x < 6; x++) {
             pages[x].style.display = "block";
         }
-        document.getElementsByClassName("page-item")[1].classList.add("active");
+        document.getElementsByClassName("page-item")[0].classList.add("active");
+        document.getElementsByClassName("page-item")[1].classList.remove("active");
         document.getElementsByClassName("page-item")[2].classList.remove("active");
-        document.getElementsByClassName("page-item")[3].classList.remove("active");
     } else if (page == 2) {
         for (let x = 6; x < 12; x++) {
             pages[x].style.display = "block";
         }
-        document.getElementsByClassName("page-item")[2].classList.add("active");
-        document.getElementsByClassName("page-item")[1].classList.remove("active");
-        document.getElementsByClassName("page-item")[3].classList.remove("active");
+        document.getElementsByClassName("page-item")[1].classList.add("active");
+        document.getElementsByClassName("page-item")[0].classList.remove("active");
+        document.getElementsByClassName("page-item")[2].classList.remove("active");
     } else if (page == 3) {
         for (let x = 12; x < 13; x++) {
             pages[x].style.display = "block";
         }
-        document.getElementsByClassName("page-item")[3].classList.add("active");
-        document.getElementsByClassName("page-item")[2].classList.remove("active");
+        document.getElementsByClassName("page-item")[2].classList.add("active");
         document.getElementsByClassName("page-item")[1].classList.remove("active");
+        document.getElementsByClassName("page-item")[0].classList.remove("active");
     }
 }
 </script>
