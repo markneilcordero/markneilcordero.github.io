@@ -266,7 +266,7 @@
                             <p>09105169575</p>
                         </div>
                         <hr class="border border-light border-1 opacity-100 mt-4">
-                        <form id="createForm" class="px-0">
+                        <form action="" method="" class="px-0">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" id="name" class="form-control rounded-0">
@@ -284,8 +284,6 @@
                         
                             <button type="button" onclick="createData()" class="btn btn-dark rounded-0 mb-3"><i class="bi bi-send-fill"></i>&nbsp;Send Message</button>
                         </form>
-                        <h3>Existing Data:</h3>
-                        <pre id="displayData"></pre>
                     </div>
                 </div>
             </div>
@@ -297,62 +295,6 @@
     </div>
 
 </div>
-
-<script>
-    // Function to read data from a selected JSON file
-    async function readDataFromFile(file) {
-        const content = await file.text();
-        return JSON.parse(content);
-    }
-
-    // Function to update data in a selected JSON file
-    async function updateDataInFile(file, data) {
-        const writable = await file.createWritable();
-        await writable.write(JSON.stringify(data));
-        await writable.close();
-    }
-
-    // Sample JSON data initially loaded from a file
-    let jsonData;
-
-    // Function to display data
-    function displayData() {
-        document.getElementById('displayData').innerText = JSON.stringify(jsonData, null, 2);
-    }
-
-    // Function to create new data
-    async function createData() {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        // Get the selected file from the file input
-        const fileInput = document.getElementById('fileInput');
-        const selectedFile = fileInput.files[0];
-
-        if (!selectedFile) {
-            alert('Please select a JSON file.');
-            return;
-        }
-
-        // Read the data from the selected file
-        jsonData = await readDataFromFile(selectedFile);
-
-        const newId = jsonData.length + 1;
-        const newData = { id: newId, name, email, message };
-
-        jsonData.push(newData);
-
-        // Update the data in the selected file
-        await updateDataInFile(selectedFile, jsonData);
-
-        // Display the updated data
-        displayData();
-    }
-
-    // Initial display of data
-    displayData();
-</script>
 
 </body>
 </html>
