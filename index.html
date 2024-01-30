@@ -11,11 +11,11 @@
 <link rel="stylesheet" href="assets/jquery-ui-1.13.2.custom/jquery-ui.css">
 <script src="assets/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 </head>
-<body>
+<body class="font-monospace">
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 col-xl-2 col-xxl-2 d-none d-xxl-block d-xl-block d-lg-block">
+        <div class="col-lg-3 col-xl-2 col-xxl-2 d-none d-xxl-block d-xl-block d-lg-block p-0 m-0">
             <div class="vh-100" style="position:fixed;">
                 <!-- <img src="images/avatar_g2.jpg" alt="profile_picture" width="100" class="rounded d-block my-3"> -->
                 <div class="py-3">
@@ -30,11 +30,11 @@
                 <a href="https://www.linkedin.com/in/mark-neil-cordero-645638261/" class="link-dark"><i class="bi bi-linkedin"></i></a>
             </div>
         </div>
-        <div style="background-color:#f1f1f1;" class="col-sm-12 col-md-12 col-lg-9 col-xl-10 col-xxl-10 p-0">
+        <div class="col-sm-12 col-md-12 col-lg-9 col-xl-10 col-xxl-10 p-0">
             <!-- My Portfolio -->
             <div class="px-3 pb-5 py-3 min-vh-100 border-bottom border-white">
                 <h1 class="display-6" id="my_portfolio">My Portfolio</h1>
-                <hr class="border border-dark border-3 opacity-75">
+                <hr class="border border-dark opacity-100">
                 <div class="row">
                     <!-- Page 1 -->
                     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 page" style="display:none;">
@@ -60,7 +60,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Discover the power of simplicity with my Todo List app, a basic yet efficient project crafted using Laravel. Embrace the essence of minimalist design as you manage tasks effortlessly through intuitive CRUD operations. Stay focused, organized, and in control of your daily agenda with this straightforward and user-friendly task management solution.</p>
-                                <a href="todo_list_app.html" class="btn btn-primary">See More...</a>
+                                <a href="todo_list_app.html" class="btn btn-dark">See More...</a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Unleash the potential of productivity with my Note Taking App a seamless CRUD-based project developed on Laravel. Experience the perfect blend of functionality and simplicity as you create, edit, and organize your notes effortlessly. Elevate your note-taking experience with a clean and user-friendly design, making it easy to capture and manage your thoughts with efficiency.</p>
-                                <a href="note_taking_app.html" class="btn btn-primary">See More...</a>
+                                <a href="note_taking_app.html" class="btn btn-dark">See More...</a>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-text">Dive into the thrill of my Number Guessing Game, a captivating CLI project crafted with Python simplicity. Challenge yourself to guess the secret number within the console, with each attempt guiding you closer to victory. Immerse yourself in the joy of a classic game, where simplicity meets entertainment in this delightful Python creation.</p>
-                                <a href="number_guessing_game.html" class="btn btn-primary">See More...</a>
+                                <a href="number_guessing_game.html" class="btn btn-dark">See More...</a>
                             </div>
                         </div>
                     </div>
@@ -356,7 +356,7 @@
                     <h2 class="display-6" id="about_me">About Me</h2>
                 </div>
                 <div class="mb-3">
-                    <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                    <p>A versatile developer with a passion for building exceptional digital experiences. In the realm of web development, I wield expertise in HTML, CSS, JavaScript, SQL, PHP, Bootstrap, Tailwind CSS, jQuery, ReactJS, Laravel, and MySQL. For Android, I turn ideas into reality using Kotlin, while Java serves as my tool of choice for software development. In the world of data science and machine learning, I harness the power of Python to explore innovative solutions.</p>
                 </div>
                 <div class="mb-3">
                     <h3 class="display-6">Technical Skills</h3>
@@ -380,19 +380,13 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <p>PHP</p>
-                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
-                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
-                    </div>
-                </div>
-                <div class="mb-3">
                     <p>SQL</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
                         <div class="progress-bar bg-dark" style="width:80%;">80%</div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <p>Laravel</p>
+                    <p>PHP</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
                         <div class="progress-bar bg-dark" style="width:80%;">80%</div>
                     </div>
@@ -404,15 +398,27 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <p>JQuery</p>
+                    <p>Tailwind CSS</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:90%;">90%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>jQuery</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
                         <div class="progress-bar bg-dark" style="width:70%;">70%</div>
                     </div>
                 </div>
                 <div class="mb-3">
-                    <p>React</p>
+                    <p>ReactJS</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
-                        <div class="progress-bar bg-dark" style="width:400%;">40%</div>
+                        <div class="progress-bar bg-dark" style="width:40%;">40%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Laravel</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -422,15 +428,21 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <p>Java</p>
+                    <p>SQLite</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
-                        <div class="progress-bar bg-dark" style="width:50%;">50%</div>
+                        <div class="progress-bar bg-dark" style="width:70%;">70%</div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <p>Kotlin</p>
                     <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
                         <div class="progress-bar bg-dark" style="width:30%;">30%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Java</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:50%;">50%</div>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -441,25 +453,25 @@
                 </div>
             </div>
             <!-- Contact Me -->
-            <div class="min-vh-100 px-3" style="background-color:#9e9e9e;">
+            <div class="min-vh-100 px-3">
                 <div class="py-5">
                     <div class="row mx-0">
                         <div class="my-3">
                             <h4 class="display-6" id="contact_me">Contact Me</h4>
                         </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-white text-center border border-0 py-3" style="background-color:#616161;">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
                             <p class="display-6"><i class="bi bi-envelope-fill"></i></p>
                             <p>mark.neil.u.cordero@gmail.com</p>
                         </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-white text-center py-3" style="background-color:#616161;">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
                             <p class="display-6"><i class="bi bi-geo-alt-fill"></i></p>
                             <p>West Rembo, Taguig City</p>
                         </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-white text-center border border-0 py-3" style="background-color:#616161;">
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
                             <p class="display-6"><i class="bi bi-telephone-fill"></i></p>
                             <p>09105169575</p>
                         </div>
-                        <hr class="border border-light border-1 opacity-100 mt-4">
+                        <hr class="border border-dark border-1 opacity-100 mt-4">
                         <form action="" method="" class="px-0">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
@@ -483,7 +495,7 @@
             </div>
             <!-- Footer -->
             <footer>
-                <p class="text-center bg-dark text-white m-0 p-3"><i class="bi bi-c-circle"></i>&nbsp;2024 Mark Neil Cordero</p>
+                <p class="text-center m-0 p-3"><i class="bi bi-c-circle"></i>&nbsp;2024 Mark Neil Cordero</p>
             </footer>
         </div>
     </div>
