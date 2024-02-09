@@ -10,6 +10,8 @@
 <script src="assets/jquery-3.7.1.js"></script>
 <link rel="stylesheet" href="assets/jquery-ui-1.13.2.custom/jquery-ui.css">
 <script src="assets/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+<script src="assets/pagination.js"></script>
+<link rel="stylesheet" href="assets/pagination.css"> 
 </head>
 <body class="font-monospace">
 
@@ -37,87 +39,6 @@
                 <hr class="border border-dark opacity-100">
                 <div class="row">
                     <!-- Page 1 -->
-                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 page" style="display:none;">
-                        <div class="card w-auto my-2" style="width: 18rem;">
-                            <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="9000">
-                                        <img src="images/todo_list_app/image1.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="6000">
-                                        <img src="images/todo_list_app/image2.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/todo_list_app/image3.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/todo_list_app/image4.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/todo_list_app/image5.png" class="card-img-top" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Discover the power of simplicity with my Todo List app, a basic yet efficient project crafted using Laravel. Embrace the essence of minimalist design as you manage tasks effortlessly through intuitive CRUD operations. Stay focused, organized, and in control of your daily agenda with this straightforward and user-friendly task management solution.</p>
-                                <a href="todo_list_app.html" class="btn btn-dark">See More...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 page" style="display:none;">
-                        <div class="card w-auto my-2" style="width: 18rem;">
-                            <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image1.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="6000">
-                                        <img src="images/note_taking_app/image2.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image3.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image4.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image5.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image6.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/note_taking_app/image7.png" class="card-img-top" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Unleash the potential of productivity with my Note Taking App a seamless CRUD-based project developed on Laravel. Experience the perfect blend of functionality and simplicity as you create, edit, and organize your notes effortlessly. Elevate your note-taking experience with a clean and user-friendly design, making it easy to capture and manage your thoughts with efficiency.</p>
-                                <a href="note_taking_app.html" class="btn btn-dark">See More...</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 page" style="display:none;">
-                        <div class="card w-auto my-2" style="width: 18rem;">
-                            <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active" data-bs-interval="9000">
-                                        <img src="images/number_guessing_game/image1.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="6000">
-                                        <img src="images/number_guessing_game/image2.png" class="card-img-top" alt="">
-                                    </div>
-                                    <div class="carousel-item" data-bs-interval="9000">
-                                        <img src="images/number_guessing_game/image3.png" class="card-img-top" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">Dive into the thrill of my Number Guessing Game, a captivating CLI project crafted with Python simplicity. Challenge yourself to guess the secret number within the console, with each attempt guiding you closer to victory. Immerse yourself in the joy of a classic game, where simplicity meets entertainment in this delightful Python creation.</p>
-                                <a href="number_guessing_game.html" class="btn btn-dark">See More...</a>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 page" style="display:none;">
                         <div class="card w-auto my-2" style="width: 18rem;">
                             <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -340,15 +261,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="py-5">
-                    <ul class="pagination justify-content-center">
+                <!-- <div class="py-5"> -->
+                    <!-- <ul class="pagination justify-content-center" id="dataContainer"> -->
                         <!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
-                        <li class="page-item"><a class="page-link" href="#" onclick="showProject(1)">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#" onclick="showProject(2)">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#" onclick="showProject(3)">3</a></li>
+                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showProject(1)">1</a></li> -->
+                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showProject(2)">2</a></li> -->
+                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showProject(3)">3</a></li> -->
                         <!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
-                    </ul>
-                </div>
+                    <!-- </ul> -->
+                <!-- </div> -->
+                <div id="data-container"></div>
+                <div class="mt-5" id="pagination-container"></div>
             </div>
             <!-- About Me -->
             <div class="px-3 py-5 min-vh-100">
@@ -504,39 +427,63 @@
 
 
 <script>
-for (let x = 0; x < 6; x++) {
-    let pages = document.getElementsByClassName("page");
-    document.getElementsByClassName("page-item")[0].classList.add("active");
-    pages[x].style.display = "block";
-}
-function showProject(page) {
-    document.getElementsByClassName("page-item")[0].classList.remove("active");
-    let pages = document.getElementsByClassName("page");
-    for (let count = 0; count < pages.length; count++) {
-        pages[count].style.display = "none";
+// for (let x = 0; x < 6; x++) {
+//     let pages = document.getElementsByClassName("page");
+//     document.getElementsByClassName("page-item")[0].classList.add("active");
+//     pages[x].style.display = "block";
+// }
+// function showProject(page) {
+//     document.getElementsByClassName("page-item")[0].classList.remove("active");
+//     let pages = document.getElementsByClassName("page");
+//     for (let count = 0; count < pages.length; count++) {
+//         pages[count].style.display = "none";
+//     }
+//     if (page == 1) {
+//         for (let x = 0; x < 6; x++) {
+//             pages[x].style.display = "block";
+//         }
+//         document.getElementsByClassName("page-item")[0].classList.add("active");
+//         document.getElementsByClassName("page-item")[1].classList.remove("active");
+//         document.getElementsByClassName("page-item")[2].classList.remove("active");
+//     } else if (page == 2) {
+//         for (let x = 6; x < 12; x++) {
+//             pages[x].style.display = "block";
+//         }
+//         document.getElementsByClassName("page-item")[1].classList.add("active");
+//         document.getElementsByClassName("page-item")[0].classList.remove("active");
+//         document.getElementsByClassName("page-item")[2].classList.remove("active");
+//     } else if (page == 3) {
+//         for (let x = 12; x < 13; x++) {
+//             pages[x].style.display = "block";
+//         }
+//         document.getElementsByClassName("page-item")[2].classList.add("active");
+//         document.getElementsByClassName("page-item")[1].classList.remove("active");
+//         document.getElementsByClassName("page-item")[0].classList.remove("active");
+//     }
+// }
+
+$('#pagination-container').pagination({
+    dataSource: [
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="9000"><img src="images/todo_list_app/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="6000"><img src="images/todo_list_app/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/todo_list_app/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/todo_list_app/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/todo_list_app/image5.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Discover the power of simplicity with my Todo List app, a basic yet efficient project crafted using Laravel. Embrace the essence of minimalist design as you manage tasks effortlessly through intuitive CRUD operations. Stay focused, organized, and in control of your daily agenda with this straightforward and user-friendly task management solution.</p><a href="todo_list_app.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="9000"><img src="images/note_taking_app/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="6000"><img src="images/note_taking_app/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/note_taking_app/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/note_taking_app/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/note_taking_app/image5.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/note_taking_app/image6.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/note_taking_app/image7.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Unleash the potential of productivity with my Note Taking App a seamless CRUD-based project developed on Laravel. Experience the perfect blend of functionality and simplicity as you create, edit, and organize your notes effortlessly. Elevate your note-taking experience with a clean and user-friendly design, making it easy to capture and manage your thoughts with efficiency.</p><a href="note_taking_app.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="9000"><img src="images/number_guessing_game/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="6000"><img src="images/number_guessing_game/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="9000"><img src="images/number_guessing_game/image3.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Dive into the thrill of my Number Guessing Game, a captivating CLI project crafted with Python simplicity. Challenge yourself to guess the secret number within the console, with each attempt guiding you closer to victory. Immerse yourself in the joy of a classic game, where simplicity meets entertainment in this delightful Python creation.</p><a href="number_guessing_game.html" class="btn btn-dark">View More</a></div></div>',
+        
+    ],
+    className: 'paginationjs-big justify-content-center',
+    pageSize: 3,
+    callback: function(data, pagination) {
+        var html = myTemplate(data);
+        $('#data-container').html(html);
     }
-    if (page == 1) {
-        for (let x = 0; x < 6; x++) {
-            pages[x].style.display = "block";
-        }
-        document.getElementsByClassName("page-item")[0].classList.add("active");
-        document.getElementsByClassName("page-item")[1].classList.remove("active");
-        document.getElementsByClassName("page-item")[2].classList.remove("active");
-    } else if (page == 2) {
-        for (let x = 6; x < 12; x++) {
-            pages[x].style.display = "block";
-        }
-        document.getElementsByClassName("page-item")[1].classList.add("active");
-        document.getElementsByClassName("page-item")[0].classList.remove("active");
-        document.getElementsByClassName("page-item")[2].classList.remove("active");
-    } else if (page == 3) {
-        for (let x = 12; x < 13; x++) {
-            pages[x].style.display = "block";
-        }
-        document.getElementsByClassName("page-item")[2].classList.add("active");
-        document.getElementsByClassName("page-item")[1].classList.remove("active");
-        document.getElementsByClassName("page-item")[0].classList.remove("active");
-    }
+})
+
+function myTemplate(data) {
+    let html = '<div class="row">';
+    $.each(data, function(index, item) {
+        html += '<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">' + item + '</div>';
+    });
+    html += '</div>';
+    return html;
 }
 </script>
 </body>
