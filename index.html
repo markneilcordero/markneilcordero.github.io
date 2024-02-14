@@ -204,7 +204,9 @@ $('#pagination-container').pagination({
         '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image3.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Embark on a visual journey through my Photographer Portfolio, a captivating showcase of moments frozen in time. With a minimalist design and a focus on the artistry of photography, this portfolio invites you to explore a world of captivating images. Each photograph tells a story, captured with precision and passion, and presented with simplicity. Dive into this visual feast and witness the beauty of simplicity as it unfolds before your eyes. Whether you\'re a photography enthusiast or simply appreciative of stunning visuals, this portfolio offers a glimpse into the artistry of photography, curated with care and crafted with love.</p><a href="neko_neko_portfolio.html" class="btn btn-dark">View More</a></div></div>',
     ],
     className: 'paginationjs-big justify-content-center',
-    pageSize: 3,
+    pageSize: 1,
+    hideLastOnEllipsisShow: true,
+    pageRange: 1,
     callback: function(data, pagination) {
         var html = myTemplate(data);
         $('#data-container').html(html);
@@ -214,7 +216,7 @@ $('#pagination-container').pagination({
 function myTemplate(data) {
     let html = '<div class="row">';
     $.each(data, function(index, item) {
-        html += '<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">' + item + '</div>';
+        html += '<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">' + item + '</div>';
     });
     html += '</div>';
     return html;
