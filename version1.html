@@ -1,0 +1,227 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<title>Mark Neil Cordero</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+<script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="assets/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+<script src="assets/jquery-3.7.1.js"></script>
+<link rel="stylesheet" href="assets/jquery-ui-1.13.2.custom/jquery-ui.css">
+<script src="assets/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+<script src="assets/pagination.js"></script>
+<link rel="stylesheet" href="assets/pagination.css">
+</head>
+<body class="font-monospace">
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-xl-2 col-xxl-2 d-none d-xxl-block d-xl-block d-lg-block p-0 m-0">
+            <div class="vh-100" style="position:fixed;">
+                <!-- <img src="images/avatar_g2.jpg" alt="profile_picture" width="100" class="rounded d-block my-3"> -->
+                <div class="py-3">
+                    <h5>Mark Neil Cordero</h5>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item m-0 px-0 py-2 border border-0"><a href="#my_portfolio" class="link-offset-2 link-underline link-underline-opacity-0 link-dark"><i class="bi bi-layout-text-window-reverse pe-1"></i>&nbsp;PORTFOLIO</a></li>
+                    <li class="list-group-item m-0 px-0 py-2 border border-0"><a href="#about_me" class="link-offset-2 link-underline link-underline-opacity-0 link-dark"><i class="bi bi-person-fill pe-1"></i>&nbsp;ABOUT</a></li>
+                    <li class="list-group-item m-0 px-0 pb-4 border border-0"><a href="#contact_me" class="link-offset-2 link-underline link-underline-opacity-0 link-dark"><i class="bi bi-envelope-fill pe-1"></i>&nbsp;CONTACT</a></li>
+                </ul>
+                <a href="https://github.com/markneilcordero" class="link-dark"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/mark-neil-cordero-645638261/" class="link-dark"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-9 col-xl-10 col-xxl-10 p-0">
+            <!-- My Portfolio -->
+            <div class="px-3 pb-5 py-3 min-vh-100 border-bottom border-white">
+                <h1 class="display-6" id="my_portfolio">My Portfolio</h1>
+                <hr class="border border-dark opacity-100">
+                <div id="data-container"></div>
+                <div class="mt-5" id="pagination-container"></div>
+            </div>
+            <!-- About Me -->
+            <div class="px-3 py-5 min-vh-100">
+                <div class="my-3">
+                    <h2 class="display-6" id="about_me">About Me</h2>
+                </div>
+                <div class="mb-3">
+                    <p>A versatile developer with a passion for building exceptional digital experiences. In the realm of web development, I wield expertise in HTML, CSS, JavaScript, SQL, PHP, Bootstrap, Tailwind CSS, jQuery, ReactJS, Laravel, and MySQL. For Android, I turn ideas into reality using Kotlin, while Java serves as my tool of choice for software development. In the world of data science and machine learning, I harness the power of Python to explore innovative solutions.</p>
+                </div>
+                <div class="mb-3">
+                    <h3 class="display-6">Technical Skills</h3>
+                </div>
+                <div class="mb-3">
+                    <p>HTML</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:90%;">90%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>CSS</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:90%;">90%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>JavaScript</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>SQL</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>PHP</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Bootstrap 5</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:90%;">90%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Tailwind CSS</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:90%;">90%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>jQuery</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:70%;">70%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>ReactJS</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:40%;">40%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Laravel</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>MySQL</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:80%;">80%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>SQLite</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:70%;">70%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Kotlin</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:30%;">30%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Java</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:50%;">50%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <p>Python</p>
+                    <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height:30px">
+                        <div class="progress-bar bg-dark" style="width:50%;">50%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Me -->
+            <div class="min-vh-100 px-3">
+                <div class="py-5">
+                    <div class="row mx-0">
+                        <div class="my-3">
+                            <h4 class="display-6" id="contact_me">Contact Me</h4>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
+                            <p class="display-6"><i class="bi bi-envelope-fill"></i></p>
+                            <p>mark.neil.u.cordero@gmail.com</p>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
+                            <p class="display-6"><i class="bi bi-geo-alt-fill"></i></p>
+                            <p>West Rembo, Taguig City</p>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 text-center py-3">
+                            <p class="display-6"><i class="bi bi-telephone-fill"></i></p>
+                            <p>09105169575</p>
+                        </div>
+                        <hr class="border border-dark border-1 opacity-100 mt-4">
+                        <form action="" method="" class="px-0">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" class="form-control rounded-0">
+                            </div>
+                        
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control rounded-0">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <input type="text" id="message" class="form-control rounded-0">
+                            </div>
+                        
+                            <button type="button" onclick="createData()" class="btn btn-dark rounded-0 mb-3"><i class="bi bi-send-fill"></i>&nbsp;Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer>
+                <p class="text-center m-0 p-3"><i class="bi bi-c-circle"></i>&nbsp;2024 Mark Neil Cordero</p>
+            </footer>
+        </div>
+    </div>
+
+</div>
+
+<script>
+$('#pagination-container').pagination({
+    dataSource: [
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/todo_list_app/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/todo_list_app/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/todo_list_app/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/todo_list_app/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/todo_list_app/image5.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Discover the power of simplicity with my Todo List app, a basic yet efficient project crafted using Laravel. Embrace the essence of minimalist design as you manage tasks effortlessly through intuitive CRUD operations. Stay focused, organized, and in control of your daily agenda with this straightforward and user-friendly task management solution.</p><a href="todo_list_app.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/note_taking_app/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image5.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image6.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/note_taking_app/image7.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Unleash the potential of productivity with my Note Taking App a seamless CRUD-based project developed on Laravel. Experience the perfect blend of functionality and simplicity as you create, edit, and organize your notes effortlessly. Elevate your note-taking experience with a clean and user-friendly design, making it easy to capture and manage your thoughts with efficiency.</p><a href="note_taking_app.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/number_guessing_game/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/number_guessing_game/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/number_guessing_game/image3.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Dive into the thrill of my Number Guessing Game, a captivating CLI project crafted with Python simplicity. Challenge yourself to guess the secret number within the console, with each attempt guiding you closer to victory. Immerse yourself in the joy of a classic game, where simplicity meets entertainment in this delightful Python creation.</p><a href="number_guessing_game.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/tic_tac_toe/image1.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Experience the pure joy of Tic Tac Toe in its simplest form with my React-based rendition. Embracing minimalism, this project offers a straightforward design that puts the focus squarely on the game itself. Dive into quick rounds of strategic play, whether you\'re challenging a friend or enjoying solo matches. This project may be simple in design, but it\'s rich in the joy of classic gameplay, highlighting my proficiency in React development and commitment to creating accessible, enjoyable experiences for users.</p><a href="tic_tac_toe.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/chirper/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image5.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image6.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image7.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/chirper/image8.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Welcome to Chirper, a streamlined social platform built on the foundation of Laravel. With simplicity and functionality at its core, Chirper offers a seamless user experience powered by Laravel Breeze for effortless login authentication. Engage in the art of communication as you post, update, and delete chirps with ease, showcasing the power of CRUD operations. This project, born from Laravel Breeze and honed through practice, demonstrates my proficiency in Laravel development. Join Chirper today to explore the synergy of Laravel\'s capabilities and unlock the potential of straightforward yet impactful web applications.</p><a href="chirper.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/crud_project_management_system/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image3.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image4.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image5.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image6.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image7.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image8.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image9.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/crud_project_management_system/image10.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Introducing a robust Project Management System crafted with HTML, Bootstrap, and PHP a testament to the simplicity and versatility of these foundational web technologies. Seamlessly manage projects from inception to completion with intuitive CRUD functionality, all wrapped in a sleek and responsive design courtesy of Bootstrap. This project embodies the essence of efficient web development, demonstrating my ability to harness the power of HTML, Bootstrap, and PHP to create dynamic and user-friendly applications. Dive into the world of project management with ease and confidence, knowing that simplicity can indeed be powerful.</p><a href="crud_project_management_system.html" class="btn btn-dark">View More</a></div></div>',
+        '<div class="card border-light shadow w-auto my-3" style="width: 18rem;"><div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel"><div class="carousel-inner"><div class="carousel-item active" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image1.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image2.png" class="card-img-top" alt=""></div><div class="carousel-item" data-bs-interval="3000"><img src="images/neko_neko_portfolio/image3.png" class="card-img-top" alt=""></div></div></div><div class="card-body"><p class="card-text">Embark on a visual journey through my Photographer Portfolio, a captivating showcase of moments frozen in time. With a minimalist design and a focus on the artistry of photography, this portfolio invites you to explore a world of captivating images. Each photograph tells a story, captured with precision and passion, and presented with simplicity. Dive into this visual feast and witness the beauty of simplicity as it unfolds before your eyes. Whether you\'re a photography enthusiast or simply appreciative of stunning visuals, this portfolio offers a glimpse into the artistry of photography, curated with care and crafted with love.</p><a href="neko_neko_portfolio.html" class="btn btn-dark">View More</a></div></div>',
+    ],
+    className: 'paginationjs-big justify-content-center',
+    pageSize: 1,
+    hideLastOnEllipsisShow: true,
+    pageRange: 1,
+    callback: function(data, pagination) {
+        var html = myTemplate(data);
+        $('#data-container').html(html);
+
+    }
+});
+
+function myTemplate(data) {
+    let html = '<div class="row">';
+    $.each(data, function(index, item) {
+        html += '<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">' + item + '</div>';
+    });
+    html += '</div>';
+    return html;
+}
+</script>
+</body>
+</html>
