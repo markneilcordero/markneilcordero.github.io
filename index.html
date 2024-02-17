@@ -210,9 +210,10 @@ $('#pagination-container').pagination({
     callback: function(data, pagination) {
         var html = myTemplate(data);
         $('#data-container').html(html);
+
     }
-})
-        
+});
+
 function myTemplate(data) {
     let html = '<div class="row">';
     $.each(data, function(index, item) {

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mark Neil Cordero</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="./assets/output.css">
+<link rel="stylesheet" href="assets/pagination.css">
+<script src="assets/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/pagination.js"></script>
+</head>
+<body>
+
+<div class="fixed top-0 left-0 right-0 h-10 bg-gradient-to-b from-black text-white z-10 sm:block md:block lg:hidden xl:hidden 2xl:hidden">
+    <div>
+        <a href="#home" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-10"></a>
+        <div id="hiddenLinks" class="hidden">
+            <a href="#portfolio" class="float-left p-2 tracking-wider">Portfolio</a>
+            <a href="#about" class="float-left p-2 tracking-wider">About</a>
+            <a href="#contact" class="float-left p-2 tracking-wider">Contact</a>
+        </div>
+        <button class="float-right p-2 px-3 font-bold" id="mobileNav">&#9776;</button>
+    </div>
+</div>
+
+<div class="fixed top-0 left-0 right-0 z-10 bg-gradient-to-b from-black hidden md:hidden lg:block xl:block 2xl:block">
+    <a href="#home" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-14"></a>
+    <div class="float-right mx-5 mt-3">
+        <a href="#portfolio" class="px-3 tracking-wider text-white text-lg">Portfolio</a>
+        <a href="#about" class="px-3 tracking-wider text-white text-lg">About</a>
+        <a href="#contact" class="px-3 tracking-wider text-white text-lg">Contact</a>
+    </div>
+</div>
+
+<div class="min-h-screen pt-14 bg-gradient-to-b from-black to-sky-400 text-white" id="portfolio">
+    <div class="min-h-screen">
+        <div id="data-container" class="lg:w-[60%] lg:mx-auto xl:w-[60%] xl:mx-auto 2xl:w-[60%] 2xl:auto"></div>
+        <div id="pagination-container"></div>
+    </div>
+    <div class="min-h-screen py-14 mx-5" id="about">
+        <p class="text-4xl tracking-wider mb-5">About Me</p>
+        <p class="leading-8 tracking-wider">A versatile developer with a passion for building exceptional digital experiences. In the realm of web development, I wield expertise in HTML, CSS, JavaScript, SQL, PHP, Bootstrap, Tailwind CSS, jQuery, ReactJS, Laravel, and MySQL. For Android, I turn ideas into reality using Kotlin, while Java serves as my tool of choice for software development. In the world of data science and machine learning, I harness the power of Python to explore innovative solutions.</p>
+        <div class="my-8 pt-24">
+            <p class="text-4xl mb-5">Technical Skills</p>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">HTML</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">90%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">CSS</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">90%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">JavaScript</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">80%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">SQL</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">80%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">PHP</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">80%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Bootstrap</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">90%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Tailwind CSS</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">90%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">jQuery</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[70%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">70%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">ReactJS</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-black font-thin text-xs">40%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Laravel</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">80%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">MySQL</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">80%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">SQLite</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[70%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-white font-thin text-xs">70%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Kotlin</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[30%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-black font-thin text-xs">30%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Java</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-black font-thin text-xs">40%</div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden p-1 mb-5">
+                <p class="tracking-wider">Python</p>
+                <div class="relative h-5 flex items-center justify-center bg-slate-200 rounded-lg">
+                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
+                  <div class="relative text-black font-thin text-xs">40%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="min-h-screen py-14 mx-5" id="contact">
+        <p class="tracking-wider text-4xl mb-5">Contact Me</p>
+        <div class="columns-1">
+            <div class="p-5">
+                <p class="text-center"><span class="material-symbols-outlined">alternate_email</span></p>
+                <p class="tracking-wider text-center">mark.neil.u.cordero@gmail.com</p>
+            </div>
+            <div class="p-5">
+                <p class="text-center"><span class="material-symbols-outlined">location_on</span></p>
+                <p class="tracking-wider text-center">West Rembo, Taguig City</p>
+            </div>
+            <div class="p-5">
+                <p class="text-center"><span class="material-symbols-outlined">phone_iphone</span></p>
+                <p class="tracking-wider text-center">+63 910 516 9575</p>
+            </div>
+        </div>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="block mt-5">Name</label>
+                <input type="text" name="name" class="border w-full h-8">
+            </div>
+            
+            <div class="mb-3">
+                <label for="email" class="block mt-5">Email</label>
+                <input type="email" name="email" class="border w-full h-8">
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="block mt-5">Message</label>
+                <input type="text" name="message" class="border w-full h-8">
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Send Message" class="py-2 px-3 bg-black tracking-wider">
+            </div>
+        </form>
+    </div>
+</div>
+<footer class="bg-black text-white">
+    <p class="text-center py-3">&#169;&nbsp;2024 Mark Neil Cordero</p>
+</footer>
+
+
+<script>
+$(document).ready(function() {
+    $("#mobileNav").on("click", function() {
+        $("#hiddenLinks").toggleClass("hidden");
+    });
+         
+    $('#pagination-container').pagination({
+        dataSource: [
+            myProjects(10, "crud_project_management_system", "CRUD Project Management", "crud_project_management_system.html"),
+            myProjects(5, "todo_list_app", "Todo List App", "todo_list_app.html"),
+            myProjects(8, "chirper", "Chirper", "chirper.html"),
+            myProjects(7, "note_taking_app", "Note Taking App", "note_taking_app.html"),
+            myProjects(1, "tic_tac_toe", "Tic Tac Toe", "tic_tac_toe.html"),
+            myProjects(3, "neko_neko_portfolio", "Neko Neko Portfolio", "neko_neko_portfolio.html"),
+            myProjects(3, "number_guessing_game", "Number Guessing Game", "number_guessing_game.html"),
+        ], 
+        pageRange: 1,
+        pageSize: 1,
+        hideFirstOnEllipsisShow: true,
+        className: "paginationjs-theme-blue justify-center paginationjs-big",
+        callback: function(data, pagination) {
+            var html = myTemplate(data);
+            $('#data-container').html(html);
+            $('.project-slides').slick({
+                arrows:false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2500,
+                fade: true,
+                cssEase: 'ease'
+            });
+        }
+    });
+
+    function myTemplate(data) {
+        let html = "<div class='columns-1'><div class='relative project-slides'>";
+        $.each(data, function(index, item){
+            html += item;
+        });
+        html += "</div></div>";
+        return html;
+    }
+    
+    function myProjects(value, foldername, captiontext, projectlink) {
+        let myArray = [];
+        for (let x = 1; x <= value; x++) {
+            let projectHTML = '<div class="text-white md:text-2xl px-3"><a href="'+projectlink+'"><img src="images/'+foldername+'/image'+x+'.png" alt="image'+x+'" class="shadow shadow-sky-400"><p class="text-xs">Click image to view</p><p class="text-center my-5" id="project-description">'+captiontext+'</p></a></div>';
+            myArray.push(projectHTML);
+        }
+        return myArray.join('');
+    }
+
+});
+</script>
+</body>
+</html>
