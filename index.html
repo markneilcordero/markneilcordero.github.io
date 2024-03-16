@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="fixed top-0 left-0 right-0 h-10 bg-slate-200 z-10 sm:block md:block lg:hidden xl:hidden 2xl:hidden">
+<div class="fixed top-0 left-0 right-0 h-10 bg-zinc-950 text-white z-10 sm:block md:block lg:hidden xl:hidden 2xl:hidden">
     <div>
         <a href="version1.html" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-10"></a>
         <div id="hiddenLinks" class="hidden">
@@ -26,7 +26,7 @@
     </div>
 </div>
 
-<div class="fixed top-0 left-0 right-0 z-10 bg-slate-200 text-black hidden md:hidden lg:block xl:block 2xl:block">
+<div class="fixed top-0 left-0 right-0 z-10 bg-zinc-950 text-white hidden md:hidden lg:block xl:block 2xl:block">
     <a href="version1.html" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-14"></a>
     <div class="float-right mx-5 mt-3">
         <a href="#portfolio" class="px-3 tracking-wider text-lg">Portfolio</a>
@@ -35,7 +35,7 @@
     </div>
 </div>
 
-<div class="min-h-screen pt-14" id="portfolio">
+<div class="min-h-screen pt-14 bg-zinc-950 text-white" id="portfolio">
     <div class="min-h-screen">
         <div id="data-container" class="pt-14 md:p-0 md:w-[85%] md:mx-auto lg:w-[60%] lg:p-0"></div>
         <div id="pagination-container"></div>
@@ -222,7 +222,7 @@ $(document).ready(function() {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 autoplay: true,
-                autoplaySpeed: 2500,
+                autoplaySpeed: 2000,
                 fade: true,
                 cssEase: 'ease'
             });
@@ -241,7 +241,7 @@ $(document).ready(function() {
     function myProjects(value, foldername, captiontext, projectlink) {
         let myArray = [];
         for (let x = 1; x <= value; x++) {
-            let projectHTML = '<div class="text-white md:text-2xl px-3"><a href="'+projectlink+'"><img src="images/'+foldername+'/image'+x+'.png" alt="image'+x+'" class="shadow shadow-sky-400"><p class="text-xs">Click image to view</p><p class="text-center my-5" id="project-description">'+captiontext+'</p></a></div>';
+            let projectHTML = '<div class="text-white md:text-2xl px-3"><a href="'+projectlink+'"><img src="images/'+foldername+'/image'+x+'.png" alt="image'+x+'" class="shadow-lg shadow-white"><p class="text-xs text-white">Click image to view</p><p class="text-center my-5" id="project-description">'+captiontext+'</p></a></div>';
             myArray.push(projectHTML);
         }
         return myArray.join('');
