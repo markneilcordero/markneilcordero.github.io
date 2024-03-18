@@ -263,6 +263,9 @@
 
 <script>
 $(document).ready(function () {
+    $("#mobileNav").on("click", function() {
+        $("#hiddenLinks").toggleClass("hidden");
+    });
     $('.my-carousel').slick({
         arrows: false,
         slidesToShow: 3,
