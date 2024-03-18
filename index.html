@@ -35,10 +35,66 @@
     </div>
 </div>
 
-<div class="min-h-screen pt-14 bg-zinc-950 text-white" id="portfolio">
-    <div class="min-h-screen">
-        <div id="data-container" class="pt-14 md:p-0 md:w-[85%] md:mx-auto lg:w-[60%] lg:p-0"></div>
-        <div id="pagination-container"></div>
+<div class="min-h-screen" id="portfolio">
+    <div class="min-h-screen pt-36 bg-gradient-to-b from-black to-sky-400">
+        <div class="my-carousel">
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/crud_project_management_system/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>CRUD Project Management</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/todo_list_app/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Todo List App</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/chirper/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Chirper</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/note_taking_app/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Note Taking App</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/tic_tac_toe/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Tic Tac Toe</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/neko_neko_portfolio/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Neko Neko Portfolio</p>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="shadow shadow-black">
+                    <img src="images/number_guessing_game/image1.png">
+                </div>
+                <div class="text-center text-white p-3">
+                    <p>Number Guessing Game</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="min-h-screen py-14 mx-5 md:py-36 lg:w-[80%] lg:mx-auto" id="about">
         <p class="text-4xl tracking-wider mb-5 lg:text-5xl lg:tracking-widest">About Me</p>
@@ -193,60 +249,25 @@
     <p class="text-center py-3">&#169;&nbsp;2024 Mark Neil Cordero</p>
 </footer>
 
-
 <script>
-$(document).ready(function() {
-    $("#mobileNav").on("click", function() {
-        $("#hiddenLinks").toggleClass("hidden");
+$(document).ready(function () {
+    $('.my-carousel').slick({
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        cssEase: 'ease',
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+        ],
     });
-         
-    $('#pagination-container').pagination({
-        dataSource: [
-            myProjects(10, "crud_project_management_system", "CRUD Project Management", "crud_project_management_system.html"),
-            myProjects(5, "todo_list_app", "Todo List App", "todo_list_app.html"),
-            myProjects(8, "chirper", "Chirper", "chirper.html"),
-            myProjects(7, "note_taking_app", "Note Taking App", "note_taking_app.html"),
-            myProjects(1, "tic_tac_toe", "Tic Tac Toe", "tic_tac_toe.html"),
-            myProjects(3, "neko_neko_portfolio", "Neko Neko Portfolio", "neko_neko_portfolio.html"),
-            myProjects(3, "number_guessing_game", "Number Guessing Game", "number_guessing_game.html"),
-        ], 
-        pageRange: 1,
-        pageSize: 1,
-        hideFirstOnEllipsisShow: true,
-        className: "paginationjs-theme-blue justify-center paginationjs-big",
-        callback: function(data, pagination) {
-            var html = myTemplate(data);
-            $('#data-container').html(html);
-            $('.project-slides').slick({
-                arrows:false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                fade: true,
-                cssEase: 'ease'
-            });
-        }
-    });
-
-    function myTemplate(data) {
-        let html = "<div class='columns-1'><div class='relative project-slides'>";
-        $.each(data, function(index, item){
-            html += item;
-        });
-        html += "</div></div>";
-        return html;
-    }
-    
-    function myProjects(value, foldername, captiontext, projectlink) {
-        let myArray = [];
-        for (let x = 1; x <= value; x++) {
-            let projectHTML = '<div class="text-white md:text-2xl px-3"><a href="'+projectlink+'"><img src="images/'+foldername+'/image'+x+'.png" alt="image'+x+'" class="shadow-lg shadow-white"><p class="text-xs text-white">Click image to view</p><p class="text-center my-5" id="project-description">'+captiontext+'</p></a></div>';
-            myArray.push(projectHTML);
-        }
-        return myArray.join('');
-    }
-
 });
 </script>
 </body>
