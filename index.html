@@ -1,294 +1,150 @@
-<!DOCTYPE html>
+<!Doctype html>
 <html>
 <head>
-<title>Mark Neil Cordero</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<link rel="stylesheet" href="./assets/output.css">
-<script src="assets/jquery-3.7.1.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<title>Mark Neil Cordero Portfolio</title>
+<link href="./assets/output.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.skills li { display:inline-block; }
+</style>
 </head>
-<body>
+<body class="bg-zinc-950 text-white md:text-black">
 
-<div class="fixed top-0 left-0 right-0 h-10 bg-zinc-950 text-white z-10 sm:block md:block lg:hidden xl:hidden 2xl:hidden">
-    <div>
-        <a href="index.html" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-10"></a>
-        <div id="hiddenLinks" class="hidden">
-            <a href="#portfolio" class="float-left p-2 tracking-wider">Portfolio</a>
-            <a href="#about" class="float-left p-2 tracking-wider">About</a>
-            <a href="#contact" class="float-left p-2 tracking-wider">Contact</a>
-        </div>
-        <button class="float-right p-2 px-3 font-bold" id="mobileNav">&#9776;</button>
-    </div>
+<!-- Mobile Header -->
+<div class="py-[80px] text-center bg-black text-white md:hidden">
+    <h1 class="text-[40px]">Mark Neil Cordero's Portfolio</h1>
+    <p>Crafting Web Magic</p>
 </div>
 
-<div class="fixed top-0 left-0 right-0 z-10 bg-zinc-950 text-white hidden md:hidden lg:block xl:block 2xl:block">
-    <a href="index.html" class="float-left"><img src="images/mn_logo.jpg" alt="logo" class="h-14"></a>
-    <div class="float-right mx-5 mt-3">
-        <a href="#portfolio" class="px-3 tracking-wider text-lg">Portfolio</a>
-        <a href="#about" class="px-3 tracking-wider text-lg">About</a>
-        <a href="#contact" class="px-3 tracking-wider text-lg">Contact</a>
-    </div>
-</div>
-
-<div class="min-h-screen bg-sky-400 text-black" id="portfolio">
-    <div class="min-h-screen pt-36">
-        <div class="my-carousel tracking-widest font-medium">
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="crud_project_management_system.html">
-                        <img src="images/crud_project_management_system/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>CRUD Project Management</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="todo_list_app.html">
-                        <img src="images/todo_list_app/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Todo List App</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="chirper.html">
-                        <img src="images/chirper/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Chirper</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="note_taking_app.html">
-                        <img src="images/note_taking_app/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Note Taking App</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="tic_tac_toe.html">
-                        <img src="images/tic_tac_toe/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Tic Tac Toe</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="neko_neko_portfolio.html">
-                        <img src="images/neko_neko_portfolio/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Neko Neko Portfolio</p>
-                </div>
-            </div>
-            <div class="p-2">
-                <div class="shadow shadow-black">
-                    <a href="number_guessing_game.html">
-                        <img src="images/number_guessing_game/image1.png">
-                    </a>
-                </div>
-                <div class="text-center p-3">
-                    <p>Number Guessing Game</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="min-h-screen py-14 mx-5 md:py-36 lg:w-[80%] lg:mx-auto" id="about">
-        <p class="text-4xl tracking-wider mb-5 lg:text-5xl lg:tracking-widest">About Me</p>
-        <p class="leading-8 tracking-wider lg:text-2xl lg:leading-10 lg:tracking-widest">A versatile developer with a passion for building exceptional digital experiences. In the realm of web development, I wield expertise in HTML, CSS, JavaScript, SQL, PHP, Bootstrap, Tailwind CSS, jQuery, ReactJS, Laravel, and MySQL. For Android, I turn ideas into reality using Kotlin, while Java serves as my tool of choice for software development. In the world of data science and machine learning, I harness the power of Python to explore innovative solutions.</p>
-        <div class="my-8 pt-24 md:pt-40 lg:pt-96">
-            <p class="text-4xl mb-5 lg:text-5xl lg:tracking-widest">Technical Skills</p>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">HTML</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">90%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">CSS</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">90%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">JavaScript</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">80%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">SQL</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">80%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">PHP</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">80%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Bootstrap</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">90%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Tailwind CSS</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[90%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">90%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">jQuery</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[70%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">70%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">ReactJS</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-black font-thin text-xs lg:text-lg">40%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Laravel</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">80%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">MySQL</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[80%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">80%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">SQLite</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[70%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-white font-thin text-xs lg:text-lg">70%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Kotlin</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[30%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-black font-thin text-xs lg:text-lg">30%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Java</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-black font-thin text-xs lg:text-lg">40%</div>
-                </div>
-            </div>
-            <div class="rounded-xl overflow-hidden p-1 mb-5 lg:mb-10">
-                <p class="tracking-wider lg:tracking-widest lg:text-2xl">Python</p>
-                <div class="relative h-7 flex items-center justify-center bg-slate-200 rounded-lg">
-                  <div class="absolute top-0 bottom-0 left-0 rounded-lg w-[40%] bg-gradient-to-r from-black to-sky-700"></div>
-                  <div class="relative text-black font-thin text-xs lg:text-lg">40%</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="min-h-screen py-14 mx-5 lg:w-[80%] lg:mx-auto" id="contact">
-        <p class="tracking-wider text-4xl mb-5 lg:text-5xl lg:tracking-widest">Contact Me</p>
-        <div class="columns-1 md:columns-3">
-            <div class="p-5 md:py-5 md:px-0">
-                <p class="text-center"><span class="material-symbols-outlined">alternate_email</span></p>
-                <p class="tracking-wider text-center md:tracking-normal lg:tracking-widest lg:text-lg">mark.neil.u.cordero@gmail.com</p>
-            </div>
-            <div class="p-5 md:py-5 md:px-0">
-                <p class="text-center"><span class="material-symbols-outlined">location_on</span></p>
-                <p class="tracking-wider text-center md:tracking-normal lg:tracking-widest lg:text-lg">West Rembo, Taguig City</p>
-            </div>
-            <div class="p-5 md:py-5 md:px-0">
-                <p class="text-center"><span class="material-symbols-outlined">phone_iphone</span></p>
-                <p class="tracking-wider text-center md:tracking-normal lg:tracking-widest lg:text-lg">+63 910 516 9575</p>
-            </div>
-        </div>
-        <form>
-            <div class="mb-3">
-                <label for="name" class="block mt-5 lg:text-lg lg:tracking-widest">Name</label>
-                <input type="text" name="name" class="border w-full h-8">
-            </div>
+<!-- Desktop Container -->
+<div class="lg:w-[80%] lg:mx-auto">
+    <!-- Left Sidebar -->
+    <div class="tracking-wide md:min-h-screen md:float-left md:w-[40%] md:bg-zinc-200 lg:w-[25%] lg:bg-zinc-950 lg:text-white">
+        <div class="p-2 lg:text-sm lg:p-5">
+            <h1 class="text-lg">Mark Neil Cordero</h1>
+            <p class="text-base mb-6">Full Stack Web Developer</p>
             
-            <div class="mb-3">
-                <label for="email" class="block mt-5 lg:text-lg lg:tracking-widest">Email</label>
-                <input type="email" name="email" class="border w-full h-8">
-            </div>
-
-            <div class="mb-3">
-                <label for="message" class="block mt-5 lg:text-lg lg:tracking-widest">Message</label>
-                <input type="text" name="message" class="border w-full h-8">
-            </div>
-            <div class="mb-3">
-                <input type="submit" value="Send Message" class="py-2 px-3 bg-black text-white tracking-wider lg:text-lg">
-            </div>
-        </form>
+        
+            <p class="mb-6">Crafting Web Magic</p>
+            
+            <p class="mb-3"><i class="fa fa-at" style="font-size:20px;"></i>&nbsp;mark.neil.u.cordero@gmail.com</p>
+            <p class="mb-3"><i class="fa fa-mobile-phone" style="font-size:20px;"></i>&nbsp;+63 910 516 9575</p>
+            <p class="mb-3"><i class="fa fa-linkedin" style="font-size:20px;"></i>&nbsp;linkedin.com/in/mark-neil-cordero</p>
+            <p class="mb-6"><i class="fa fa-github" style="font-size:20px;"></i>&nbsp;github.com/markneilcordero</p>
+        
+            <p>Skills and Techonologies</p>
+            <ul class="skills">
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">HTML</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">CSS</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">JavaScript</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">SQL</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">PHP</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Bootstrap</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">TailwindCSS</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">JQuery</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">React</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Vue</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Laravel</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">MySQL</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">SQLite</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Java</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Kotlin</li>
+                <li class="border border-black px-3 m-1 bg-black lg:bg-zinc-900 text-white rounded-lg lg:rounded-none">Python</li>
+            </ul>
+        </div>
     </div>
-</div>
+    
+    <!-- Right Sidebar -->
+    <div class="p-5 md:float-right md:max-h-screen md:w-[60%] md:bg-white md:overflow-auto lg:w-[75%] lg:bg-zinc-800 lg:text-white lg:border lg:border-black">
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Dec 7, 2017</p>
+            <div class="mb-3">
+                <img src="images/neko_neko_portfolio/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/crud_project_management_system/image2.png" alt="image2.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/note_taking_app/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/todo_list_app/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/chirper/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/tic_tac_toe/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+        <div class="mb-14">
+            <h1 class="mb-5 text-lg">TITLE HEADING</h1>
+            <p class="mb-5">Title description, Sep 2, 2017</p>
+            <div class="mb-3">
+                <img src="images/number_guessing_game/image1.png" alt="image1.png">
+            </div>
+            <div>
+                <p class="mb-3">Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="bg-black text-white text-center md:clear-right">
+        <p class="py-5">©&nbsp;2024 Mark Neil Cordero</p>
+    </div>
 
-<footer class="bg-black text-white text-center py-5">
-    <p class="p-3">&#169;&nbsp;2024 Mark Neil Cordero</p>
-    <a href="original_design.html" class="underline">Original Design</a>
-</footer>
+</div>
 
 <script>
-$(document).ready(function () {
-    $("#mobileNav").on("click", function() {
-        $("#hiddenLinks").toggleClass("hidden");
-    });
-    $('.my-carousel').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        infinite: true,
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        cssEase: 'ease',
-        dots: false,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                }
-            },
-        ],
-    });
-});
 </script>
 </body>
 </html>
