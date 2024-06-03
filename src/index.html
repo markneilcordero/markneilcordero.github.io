@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+<title>Mark Neil Cordero - Full Stack Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<style>
+@font-face {
+  font-family: 'CartographCF';
+  src: url('../fonts/CartographCF-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+  font-family: 'CartographCF', sans-serif;
+}
+</style>
+<link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-neutral-100 text-neutral-900 font-sans">
+
+  <header class="bg-white shadow">
+    <div class="container mx-auto p-6 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-primary">Mark Neil Cordero</h1>
+      <button id="menu-btn" class="block md:hidden text-primary focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav id="menu" class="hidden md:flex space-x-4">
+        <a href="#about" class="text-primary hover:text-secondary">About</a>
+        <a href="#projects" class="text-primary hover:text-secondary">Projects</a>
+        <a href="#skills" class="text-primary hover:text-secondary">Skills</a>
+        <a href="#resume" class="text-primary hover:text-secondary">Resume</a>
+        <a href="#contact" class="text-primary hover:text-secondary">Contact</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="md:hidden">
+      <nav class="flex flex-col space-y-4 p-4">
+        <a href="#about" class="text-primary hover:text-secondary">About</a>
+        <a href="#projects" class="text-primary hover:text-secondary">Projects</a>
+        <a href="#skills" class="text-primary hover:text-secondary">Skills</a>
+        <a href="#resume" class="text-primary hover:text-secondary">Resume</a>
+        <a href="#contact" class="text-primary hover:text-secondary">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="intro" class="bg-accent py-20">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-primary">Welcome to My Portfolio</h2>
+      <p class="text-lg mt-4 text-neutral-900">Hi, I'm Mark. A Full Stack Developer.</p>
+    </div>
+  </section>
+  
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primary">About Me</h2>
+      <p class="mt-4 text-neutral-900">Hello! I'm Mark, a passionate Full Stack Developer with a diverse skill set spanning web development, software development, Android development, data science, machine learning, and game development. I thrive on learning new technologies and continuously improving my expertise.</p>
+    </div>
+  </section>
+  
+  <section id="projects" class="py-20 bg-accent">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primary">My Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">Personal Blog</h3>
+          <p class="mt-4 text-neutral-900"> A platform where users can write, edit, and delete their blog posts. Include features like user authentication, comment sections, and tags.</p>
+          <div class="mt-4">
+            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/personal-blog" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">CRUD Project Management System</h3>
+          <p class="mt-4 text-neutral-900">The CRUD Project Management System is a web app simplifying project management. Users can create, assign tasks, and track progress efficiently, fostering seamless collaboration.</p>
+          <div class="mt-4">
+            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/crud-project-management-system" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">Note Taking App</h3>
+          <p class="mt-4 text-neutral-900">The Note-Taking App simplifies note organization with easy creation, editing, and deletion features. Its user-friendly interface and intuitive design enhance productivity and streamline information management.</p>
+          <div class="mt-4">
+            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/note-taking-app" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">Pizza Order</h3>
+          <p class="mt-4 text-neutral-900">The Pizza Order System is a convenient platform for ordering pizzas online. Users can customize their pizzas, choose toppings, and select delivery or pickup options. With seamless navigation and secure payment processing, this system ensures a delightful pizza ordering experience.</p>
+          <div class="mt-4">
+            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/pizza-order" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">Recipe Book App using Backpack</h3>
+          <p class="mt-4 text-neutral-900">The Recipe Book App Backpack is your digital kitchen companion, offering a hassle-free way to store and organize recipes. Users can easily add, edit, and delete recipes, creating a personalized collection. With its user-friendly interface and robust features, this app simplifies meal planning and culinary exploration.</p>
+          <div class="mt-4">
+            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/recipe-book-app-backpack" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg">
+          <h3 class="text-2xl font-bold text-primary">Task Manager App</h3>
+          <p class="mt-4 text-neutral-900">The Task Manager App, powered by Laravel, is a comprehensive tool for organizing tasks efficiently. Users can create, update, and delete tasks seamlessly, ensuring smooth task management. With Laravel's robust features and intuitive interface, this app enhances productivity and project coordination.</p>
+          <div class="mt-4">
+            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
+            <a href="https://github.com/markneilcordero/task-manager-app" class="text-secondary hover:underline ml-4">Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="skills" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primary">Skills</h2>
+      <ul class="mt-4 text-neutral-900 space-y-2">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootstrap</li>
+        <li>TailwindCSS</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>React</li>
+        <li>SQL</li>
+        <li>MySQL</li>
+        <li>SQLite</li>
+        <li>PHP</li>
+        <li>Laravel</li>
+        <li>Java</li>
+        <li>JavaFX</li>
+        <li>Kotlin</li>
+        <li>Python</li>
+        <li>Pandas</li>
+        <li>Lua</li>
+      </ul>
+    </div>
+  </section>
+  
+  <section id="resume" class="py-20 bg-accent">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primary">Resume</h2>
+      <a href="https://markneilcordero.github.io/markneilcordero-resume/" download class="mt-4 text-secondary hover:underline block">View My Resume</a>
+    </div>
+  </section>
+  
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-primary">Contact Me</h2>
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain" class="mt-8 space-y-4">
+        <div>
+          <label for="name" class="block text-neutral-900">Name:</label>
+          <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded">
+        </div>
+        <div>
+          <label for="email" class="block text-neutral-900">Email:</label>
+          <input type="text" id="email" name="email" class="w-full border border-gray-300 p-2 rounded">
+        </div>
+        <div>
+          <label for="message" class="block text-neutral-900">Message:</label>
+          <textarea id="message" name="message" class="w-full border border-gray-300 p-2 rounded"></textarea>
+        </div>
+        <input type="submit" value="Send" class="bg-secondary text-white px-4 py-2 rounded hover:bg-blue-700">
+      </form>
+    </div>
+  </section>  
+  
+<footer class="bg-white shadow mt-12">
+  <div class="container mx-auto p-6 text-center">
+    <p>&copy; 2024 Mark Neil Cordero - Full Stack Developer. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menu-btn').addEventListener('click', function () {
+  let menu = document.getElementById('mobile-menu');
+  menu.classList.toggle('hidden');
+});
+</script>
+
+</body>
+</html>
