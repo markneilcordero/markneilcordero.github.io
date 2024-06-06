@@ -1,26 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [".{html,js}"],
-  darkMode: false,
+  content: ["./index.html"],
   theme: {
     extend: {
       colors: {
-        primary: '#000000', // Black
-        secondary: '#38BDF8', // Sky Blue
-        accent: '#E0F7FF', // Sky Blue Light
-        neutral: {
-          100: '#F3F4F6', // Light Gray
-          900: '#000000', // Black
-        },
+        skyblue: '#00BFFF', // Brighter Sky Blue
+        black: '#000000', // Black
       },
-      fontFamily: {
-        sans: ['CartographCF', 'sans-serif'],
-        body: ['Roboto', 'Open Sans', 'sans-serif'],
+      backgroundImage: {
+        'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
       },
+      gradientColorStops: theme => ({
+        'skyblue': '#00BFFF', // Brighter Sky Blue
+        'black': '#FFFFFF',
+      }),
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }
