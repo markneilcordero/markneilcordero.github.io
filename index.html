@@ -32,7 +32,7 @@ body { font-family: Arial, sans-serif; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    background: rgba(0, 0, 0, 0.8); /* Adjust transparency */
     z-index: 1;
 }
 /* Ensures content stays visible */
@@ -61,12 +61,6 @@ body { font-family: Arial, sans-serif; }
 .hero-section .btn {
     font-size: 1.1rem; /* Make button text slightly larger */
     padding: 10px 20px; /* Increase button padding */
-}
-.hero-text {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-block;
 }
 .section-title { margin-top: 40px; text-align: center; font-weight: bold; }
 .project-card, .blog-card, .gallery-card { margin-bottom: 20px; }
@@ -134,7 +128,7 @@ body { font-family: Arial, sans-serif; }
                 </div>
             </div>
         </div>
-        <div class="col-md-8 text-md-start text-center hero-text">
+        <div class="col-md-8 text-md-start text-center">
             <h1 id="name" class="fw-bold text-center"></h1>
             <p id="bio" class="text-center"></p>
             <div class="text-center">
@@ -418,53 +412,79 @@ $(document).ready(function() {
     function fetchGallery() {
         $.get(`${API_URL}/gallery`, function(response) {
             let galleryHtml = "";
-            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
-            response.data.forEach(image => {
-                let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${image.image}`;
-                let title = image.title || "Gallery Image";
-                let description = image.description || "No description available.";
-                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
+            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"];
+
+            response.data.forEach(imagePost => {
+                let images = JSON.parse(imagePost.image); // Parse JSON array of images
+                let firstImage = images.length > 0 ? images[0] : "default-placeholder.jpg"; // Use first image or placeholder
+                let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${firstImage}`;
+                let description = imagePost.description || "No description available.";
+
+                let imagesJson = JSON.stringify(images); // Convert images array to string
+
                 galleryHtml += `
-                    <div class="col-md-3" data-aos="${randomAos}">
-                        <div class="card gallery-card">
-                            <img src="${imageUrl}" class="card-img-top img-thumbnail gallery-image"
-                            alt="Gallery Image"
-                            data-title="${title}"
-                            data-description="${description}"
-                            data-image="${imageUrl}">
-                            <div class="card-body text-center">
-                                <p class="card-text">${image.title || "Gallery Image"}</p>
-                                <p class="card-text">${image.description || "No description available."}</p>
-                                <!-- View Image Button -->
-                                <button class="btn btn-primary view-image-btn"
-                                    data-title="${title}"
-                                    data-description="${description}"
-                                    data-image="${imageUrl}">
-                                    View Image
-                                </button>
-                            </div>
+                <div class="col-md-3" data-aos="${animations[Math.floor(Math.random() * animations.length)]}">
+                    <div class="card gallery-card">
+                        <img src="https://markneilcordero.com/portfolio-api/public/storage/${images[0]}" 
+                            class="card-img-top img-thumbnail gallery-image"
+                            data-title="${imagePost.title || 'Gallery Image'}"
+                            data-description="${description}" 
+                            data-images='${imagesJson}'>
+                        <div class="card-body text-center">
+                            <p class="card-text">${imagePost.title || "Gallery Image"}</p>
+                            <p class="card-text">${description}</p>
+                            <button class="btn btn-primary view-image-btn"
+                                data-title="${imagePost.title || 'Gallery Image'}"
+                                data-description="${description}"
+                                data-images='${imagesJson}'>
+                                View Images
+                            </button>
                         </div>
-                    </div>`;
+                    </div>
+                </div>`;
             });
+
             $("#gallery").html(galleryHtml);
-            AOS.refresh();
+        }).fail(function() {
+            console.error("Failed to fetch gallery images.");
         });
     }
     fetchGallery();
     setInterval(fetchGallery, 10000);
 
     // Open Modal on Image Click
-    $(document).on("click", ".gallery-image, .view-image-btn", function() {
-        let title = $(this).data("title");
-        let description = $(this).data("description");
-        let imageSrc = $(this).data("image");
+    $(document).on("click", ".view-image-btn, .gallery-image", function() {
+        let images = JSON.parse($(this).attr("data-images")); // Get all images
+        let description = $(this).attr("data-description") || "No description available."; // Get description
+        let indicatorsHtml = "";
+        let carouselHtml = "";
+    
+        if (images.length === 0) {
+            $("#carouselIndicators").html("");
+            $("#carouselImages").html(`<div class="text-center p-3">No images available.</div>`);
+            $("#galleryModalDescription").text("No description available.");
+        } else {
+            images.forEach((imgSrc, index) => {
+                let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${imgSrc}`;
+            
+                indicatorsHtml += `
+                    <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="${index}"
+                    class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>`;
 
-        $("#galleryModalTitle").text(title || "Gallery Image");
-        $("#galleryModalDescription").html(description || "No description available.").show();
-        $("#galleryModalImage").attr("src", imageSrc).hide().fadeIn(300);
+                carouselHtml += `
+                    <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                        <img src="${imageUrl}" class="d-block w-100 img-thumbnail" style="max-height: 500px; object-fit: contain;">
+                    </div>`;
+            });
 
+            $("#carouselIndicators").html(indicatorsHtml);
+            $("#carouselImages").html(carouselHtml);
+            $("#galleryModalDescription").text(description); // ✅ Set the description
+        }
         $("#galleryModal").modal("show");
     });
+
+
 
     // Contact Form
     $("#contactForm").submit(function(event) {
@@ -513,23 +533,40 @@ $(document).ready(function() {
             }
         });
     });
+
 });
 </script>
-<!-- Gallery Modal -->
+<!-- Gallery Modal with Bootstrap Carousel -->
 <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="galleryModalTitle"></h5>
+                <h5 class="modal-title" id="galleryModalTitle">Gallery Images</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body text-center">
-                <img id="galleryModalImage" src="" class="img-fluid rounded shadow-lg" alt="Gallery Image">
-                <p id="galleryModalDescription" class="mt-3 text-muted"></p>
+            <div class="modal-body">
+                <!-- Bootstrap Carousel -->
+                <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators" id="carouselIndicators"></div>
+                    <div class="carousel-inner" id="carouselImages"></div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Description Section -->
+                <div class="text-center mt-3">
+                    <p id="galleryModalDescription" class="text-muted"></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Blog Modal -->
 <div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
