@@ -438,7 +438,7 @@ $(document).ready(function() {
         let imageSrc = $(this).data("image");
 
         $("#galleryModalTitle").text(title || "Gallery Image");
-        $("#galleryModalDescription").text(description || "No description available.");
+        $("#galleryModalDescription").html(description || "No description available.").show();
         $("#galleryModalImage").attr("src", imageSrc).hide().fadeIn(300);
 
         $("#galleryModal").modal("show");
