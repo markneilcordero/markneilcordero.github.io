@@ -10,6 +10,29 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure all elements stay within viewport */
+.container, .row, .col, .hero-section, .project-card, .blog-card, .gallery-card {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure images fit within their container */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix Bootstrap row issue */
+.row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
 body { font-family: Arial, sans-serif; }
 .hero-section {
     background: url("images/about-bg.jpg") no-repeat center center;
@@ -121,7 +144,7 @@ body { font-family: Arial, sans-serif; }
 <!-- About Me Section -->
 <section class="hero-section">
     <div class="container d-flex align-items-center justify-content-center flex-column text-center">
-        <div class="row align-items-center">
+        <div class="row align-items-center gx-0">
             <div class="col-md-4 text-center">
                 <div class="profile-img-container">
                     <img id="profileImage" src="" alt="Profile Image">
@@ -588,7 +611,7 @@ $(document).ready(function() {
 <div class="container" data-aos="flip-up" data-aos-anchor-placement="bottom-bottom">
     <footer class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 my-4 border-top">
         <!-- Left Section: Logo + Copyright -->
-        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start">
+        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start gx-0">
             <a href="/" class="mb-2 mb-md-0 me-md-2 text-decoration-none">
                 <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo">
             </a>
