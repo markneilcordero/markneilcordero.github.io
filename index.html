@@ -225,7 +225,7 @@ $(document).ready(function() {
             $("#bio").text(data.bio);
             $("#resumeLink").attr("href", `${API_URL}/resume`);
         });
-        
+
         // Fetch Resume File
         $.ajax({
             url: `${API_URL}/resume`,
@@ -395,9 +395,11 @@ $(document).ready(function() {
     function fetchSkills() {
         $.get(`${API_URL}/skills`, function(response) {
             let skillsHtml = "";
+            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
             response.forEach(skill => {
+                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 skillsHtml += `
-                    <div class="col-md-2 col-sm-4 col-6 text-center skill-container" data-aos="flip-up">
+                    <div class="col-md-2 col-sm-4 col-6 text-center skill-container" data-aos="${randomAos}">
                         <img src="https://markneilcordero.com/portfolio-api/public/storage/${skill.icon}" class="img-thumbnail border border-0 skill-icon" alt="Skill Icon">
                         <h5>${skill.name}</h5>
                         <p>${skill.level}</p>
