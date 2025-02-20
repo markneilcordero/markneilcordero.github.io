@@ -250,14 +250,16 @@ $(document).ready(function() {
         });
     }
     fetchAboutMe();
-    setInterval(fetchAboutMe, 5000);
+    setInterval(fetchAboutMe, 1000);
 
 
     // Fetch Portfolio Projects
     function fetchProjects() {
         $.get(`${API_URL}/projects`, function(response) {
             let projectsHtml = "";
+            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
             response.data.forEach(project => {
+                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 let indicatorsHtml = "";
                 let carouselId = `carousel-${project.id}`;
     
@@ -290,7 +292,7 @@ $(document).ready(function() {
                         </div>`;
                 }
                 projectsHtml += `
-                    <div class="col-md-6">
+                    <div class="col-md-6" data-aos="${randomAos}">
                         <div class="card project-card">
                             <!-- Boostrap Carousel -->
                             <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" data-bs-keyboard="true">
@@ -343,15 +345,17 @@ $(document).ready(function() {
         });
     }
     fetchProjects();
-    setInterval(fetchProjects, 5000);
+    setInterval(fetchProjects, 10000);
 
     // Fetch Blog Posts
     function fetchBlog() {
         $.get(`${API_URL}/blogs`, function(response) {
             let blogsHtml = "";
+            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
             response.data.forEach(blog => {
+                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 blogsHtml += `
-                    <div class="col-md-4">
+                    <div class="col-md-4" data-aos="${randomAos}">
                         <div class="card blog-card">
                             <img src="https://markneilcordero.com/portfolio-api/public/storage/${blog.image}" class="card-img-top img-thumbnail" alt="Blog Image">
                             <div class="card-body">
@@ -366,7 +370,7 @@ $(document).ready(function() {
         });
     }
     fetchBlog();
-    setInterval(fetchBlog, 5000);
+    setInterval(fetchBlog, 10000);
 
     // Open Modal on Blog Click
     $(document).on("click", ".read-more-btn", function() {
@@ -409,7 +413,7 @@ $(document).ready(function() {
         });
     }
     fetchSkills();
-    setInterval(fetchSkills, 5000);
+    setInterval(fetchSkills, 10000);
 
     // Fetch Gallery Images
     function fetchGallery() {
@@ -448,7 +452,7 @@ $(document).ready(function() {
         });
     }
     fetchGallery();
-    setInterval(fetchGallery, 5000);
+    setInterval(fetchGallery, 10000);
 
     // Open Modal on Image Click
     $(document).on("click", ".gallery-image, .view-image-btn", function() {
