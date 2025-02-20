@@ -416,7 +416,11 @@ $(document).ready(function() {
                 galleryHtml += `
                     <div class="col-md-3">
                         <div class="card gallery-card">
-                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${image.image}" class="card-img-top img-thumbnail gallery-image" alt="Gallery Image" data-title="${image.title}" data-description="${image.description}" data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}">
+                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${image.image}" class="card-img-top img-thumbnail gallery-image" alt="Gallery Image" data-title="${image.title}" data-description="${image.description}" data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}"
+                            alt="Gallery Image"
+                            data-title="${image.title}"
+                            data-description="${image.description}"
+                            data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}">
                             <div class="card-body">
                                 <p class="card-text">${image.title || "Gallery Image"}</p>
                                 <p class="card-text">${image.description || "No description available."}</p>
