@@ -1,190 +1,567 @@
-<!doctype html>
-<html>
+<!Doctype html>
+<html lang="en">
 <head>
-<title>Mark Neil Cordero - Full Stack Developer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<title>My Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
-@font-face {
-  font-family: 'CartographCF';
-  src: url('./fonts/CartographCF-RegularItalic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+body { font-family: Arial, sans-serif; }
+.hero-section {
+    background: url("images/about-bg.jpg") no-repeat center center;
+    background-size: cover; /* Ensures the full image fits */
+    background-position: center;
+    background-attachment: fixed; /* Optional: Creates a parallax effect */
+    min-height: 100vh; /* Makes sure it fills the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
 }
 
-body {
-  font-family: 'CartographCF', sans-serif;
+/* Dark Overlay for Better Readability */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: 1;
+}
+/* Ensures content stays visible */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+.hero-section h1,
+.hero-section p,
+.hero-section a {
+    color: white !important; /* Ensures text is visible */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds readability */
+}
+.hero-section h1 {
+    font-size: 3rem; /* Make heading bigger */
+    font-weight: bold;
+    margin-bottom: 15px; /* Add spacing below */
+}
+
+.hero-section p {
+    font-size: 1.2rem; /* Increase font size */
+    max-width: 800px; /* Prevent text from stretching too wide */
+    line-height: 1.6; /* Improve readability */
+    margin: 0 auto 20px; /* Center text & add spacing */
+    padding: 0 15px; /* Add small padding for better spacing on mobile */
+}
+
+.hero-section .btn {
+    font-size: 1.1rem; /* Make button text slightly larger */
+    padding: 10px 20px; /* Increase button padding */
+}
+
+
+.section-title { margin-top: 40px; text-align: center; font-weight: bold; }
+.project-card, .blog-card, .gallery-card { margin-bottom: 20px; }
+.img-thumbnail { height: 150px; object-fit: cover; }
+.carousel-item img { min-height: 350px; object-fit: cover; border-radius: 10px; }
+#projects { padding: 40px 0; }
+.profile-img-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    /* border: 4px solid #000; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#blogModalImage {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+.skill-item {
+    width: 120px; /* Set consistent column width */
+    margin: 10px auto; /* Center the items */
+}
+
+.skill-icon {
+    width: 80px; /* Adjust icon size */
+    height: 80px;
+    object-fit: contain; /* Prevents cropping */
+}
+
+.skill-level {
+    font-size: 14px;
+    color: #555;
+}
+.skill-icon:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+.contact-form {
+    max-width: 600px; /* Prevents form from being too wide */
+    margin: auto;
 }
 </style>
-<link href="./src/output.css" rel="stylesheet">
 </head>
-<body class="bg-gradient-to-b from-skyblue to-black text-neutral-900">
+<body>
 
-  <header class="bg-white shadow">
-    <div class="container mx-auto p-6 flex justify-between items-center">
-      <h1 class="text-3xl font-bold text-primary">Mark Neil Cordero</h1>
-      <button id="menu-btn" class="block md:hidden text-primary focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-      <nav id="menu" class="hidden md:flex space-x-4">
-        <a href="#about" class="text-primary hover:text-secondary">About</a>
-        <a href="#projects" class="text-primary hover:text-secondary">Projects</a>
-        <a href="#skills" class="text-primary hover:text-secondary">Skills</a>
-        <a href="#resume" class="text-primary hover:text-secondary">Resume</a>
-        <a href="#contact" class="text-primary hover:text-secondary">Contact</a>
-      </nav>
-    </div>
-    <div id="mobile-menu" class="md:hidden">
-      <nav class="flex flex-col space-y-4 p-4">
-        <a href="#about" class="text-primary hover:text-secondary">About</a>
-        <a href="#projects" class="text-primary hover:text-secondary">Projects</a>
-        <a href="#skills" class="text-primary hover:text-secondary">Skills</a>
-        <a href="#resume" class="text-primary hover:text-secondary">Resume</a>
-        <a href="#contact" class="text-primary hover:text-secondary">Contact</a>
-      </nav>
-    </div>
-  </header>
-  
-  <section id="intro" class="bg-gradient-to-r from-accent via-highlight to-primary py-20">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-primary">Welcome to My Portfolio</h2>
-      <p class="text-lg mt-4 text-neutral-900">Hi, I'm Mark.</p>
-    </div>
-  </section>
-  
-  <section id="about" class="py-20 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary">About Me</h2>
-      <p class="mt-4 text-neutral-900">I'm a Full Stack Developer with a diverse skill set spanning web development, software development, Android development, data science, machine learning, and game development. I thrive on learning new technologies and continuously improving my expertise.</p>
-    </div>
-  </section>
-  
-  <section id="projects" class="py-20 bg-accent">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary">My Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">Personal Blog</h3>
-          <p class="mt-4 text-neutral-900"> A platform where users can write, edit, and delete their blog posts. Include features like user authentication, comment sections, and tags.</p>
-          <div class="mt-4">
-            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/personal-blog" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
+<!-- About Me Section -->
+<section class="hero-section">
+    <div class="container d-flex align-items-center justify-content-center flex-column text-center">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <div class="profile-img-container">
+                    <img id="profileImage" src="" alt="Profile Image">
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">CRUD Project Management System</h3>
-          <p class="mt-4 text-neutral-900">The CRUD Project Management System is a web app simplifying project management. Users can create, assign tasks, and track progress efficiently, fostering seamless collaboration.</p>
-          <div class="mt-4">
-            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/crud-project-management-system" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
+        <div class="col-md-8 text-md-start text-center">
+            <h1 id="name" class="fw-bold text-center"></h1>
+            <p id="bio" class="text-center"></p>
+            <div class="text-center">
+                <a id="resumeLink" href="#" class="btn btn-primary mt-2" target="_blank" style="display: none;">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
         </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">Note Taking App</h3>
-          <p class="mt-4 text-neutral-900">The Note-Taking App simplifies note organization with easy creation, editing, and deletion features. Its user-friendly interface and intuitive design enhance productivity and streamline information management.</p>
-          <div class="mt-4">
-            <!-- <a href="" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/note-taking-app" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
-        </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">Pizza Order</h3>
-          <p class="mt-4 text-neutral-900">The Pizza Order System is a convenient platform for ordering pizzas online. Users can customize their pizzas, choose toppings, and select delivery or pickup options. With seamless navigation and secure payment processing, this system ensures a delightful pizza ordering experience.</p>
-          <div class="mt-4">
-            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/pizza-order" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
-        </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">Recipe Book App using Backpack</h3>
-          <p class="mt-4 text-neutral-900">The Recipe Book App Backpack is your digital kitchen companion, offering a hassle-free way to store and organize recipes. Users can easily add, edit, and delete recipes, creating a personalized collection. With its user-friendly interface and robust features, this app simplifies meal planning and culinary exploration.</p>
-          <div class="mt-4">
-            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/recipe-book-app-backpack" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
-        </div>
-        <div class="bg-white p-6 shadow-lg rounded-lg">
-          <h3 class="text-2xl font-bold text-primary">Task Manager App</h3>
-          <p class="mt-4 text-neutral-900">The Task Manager App, powered by Laravel, is a comprehensive tool for organizing tasks efficiently. Users can create, update, and delete tasks seamlessly, ensuring smooth task management. With Laravel's robust features and intuitive interface, this app enhances productivity and project coordination.</p>
-          <div class="mt-4">
-            <!-- <a href="link-to-demo" class="text-secondary hover:underline">Live Demo</a> -->
-            <a href="https://github.com/markneilcordero/task-manager-app" class="text-secondary hover:underline ml-4">Source Code</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <section id="skills" class="py-20 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary">Skills</h2>
-      <ul class="mt-4 text-neutral-900 space-y-2">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Bootstrap</li>
-        <li>TailwindCSS</li>
-        <li>JavaScript</li>
-        <li>jQuery</li>
-        <li>React</li>
-        <li>SQL</li>
-        <li>MySQL</li>
-        <li>SQLite</li>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>Java</li>
-        <li>JavaFX</li>
-        <li>Kotlin</li>
-        <li>Python</li>
-        <li>Pandas</li>
-        <li>Lua</li>
-      </ul>
-    </div>
-  </section>
-  
-  <section id="resume" class="py-20 bg-accent">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary">Resume</h2>
-      <a href="https://markneilcordero.github.io/markneilcordero-resume/" class="mt-4 text-secondary hover:underline block">View My Resume</a>
-    </div>
-  </section>
-  
-  <section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-primary">Contact Me</h2>
-      <form action="mailto:your-email@example.com" method="post" enctype="text/plain" class="mt-8 space-y-4">
-        <div>
-          <label for="name" class="block text-neutral-900">Name:</label>
-          <input type="text" id="name" name="name" class="w-full border border-gray-300 p-2 rounded">
+</section>
+
+<!-- Projects Section -->
+<div class="container min-vh-100">
+    <h2 class="section-title">Projects</h2>
+    <div class="row" id="projects"></div>
+</div>
+
+<!-- Blog Section -->
+<div class="container min-vh-100">
+    <h2 class="section-title">Latest Blog Posts</h2>
+    <div class="row" id="blogs"></div>
+</div>
+
+<!-- Skills Section -->
+<div class="container min-vh-100">
+    <h2 class="section-title">Skills</h2>
+    <div class="row" id="skills"></div>
+</div>
+
+<!-- Gallery Section -->
+<div class="container min-vh-100">
+    <h2 class="section-title">Gallery</h2>
+    <div class="row" id="gallery"></div>
+</div>
+
+<!-- Contact Form Section -->
+<div class="container mt-5" style="min-height: 75vh;" data-aos="fade-right">
+    <h2 class="section-title text-center">Contact Me</h2>
+
+    <!-- Success & Error Messages -->
+    <div class="alert alert-success text-center" id="successMsg" style="display:none;">Message sent successfully!</div>
+    <div class="alert alert-danger text-center" id="errorMsg" style="display:none;"></div>
+
+    <!-- Contact Form -->
+    <form id="contactForm" class="contact-form">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label class="form-label">Your Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
         </div>
-        <div>
-          <label for="email" class="block text-neutral-900">Email:</label>
-          <input type="text" id="email" name="email" class="w-full border border-gray-300 p-2 rounded">
+
+        <div class="mb-3">
+            <label class="form-label">Subject</label>
+            <input type="text" class="form-control" name="subject" required>
         </div>
-        <div>
-          <label for="message" class="block text-neutral-900">Message:</label>
-          <textarea id="message" name="message" class="w-full border border-gray-300 p-2 rounded"></textarea>
+
+        <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" name="message" rows="4" required></textarea>
         </div>
-        <input type="submit" value="Send" class="bg-secondary text-white px-4 py-2 rounded hover:bg-blue-700">
-      </form>
-    </div>
-  </section>  
-  
-  <footer class="bg-white shadow mt-12">
-    <div class="container mx-auto p-6 text-center">
-      <p>&copy; 2024 Mark Neil Cordero - Full Stack Developer. All rights reserved.</p>
-    </div>
-  </footer>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm d-none" id="loadingSpinner"></span>
+                Send Message
+            </button>
+        </div>
+    </form>
+</div>
+
 
 <script>
-document.getElementById('menu-btn').addEventListener('click', function () {
-  let menu = document.getElementById('mobile-menu');
-  menu.classList.toggle('hidden');
+$(document).ready(function() {
+    const API_URL = "https://markneilcordero.com/portfolio-api/public/api";
+
+    // Fetch About Me Data
+    function fetchAboutMe() {
+        $.get(`${API_URL}/about`, function (data) {
+            $("#profileImage").attr("src", `https://markneilcordero.com/portfolio-api/public/storage/${data.profile_image}`);
+            $("#name").text(data.name);
+            $("#bio").text(data.bio);
+            $("#resumeLink").attr("href", `${API_URL}/resume`);
+        });
+
+        // Fetch Resume File
+        $.ajax({
+            url: `${API_URL}/resume`,
+            type: "GET",
+            success: function(resumeData) {
+                if (resumeData && resumeData.resume_file) {
+                    let fileName = resumeData.resume_file.split('/').pop();
+                    let resumeURL = `https://markneilcordero.com/portfolio-api/public/storage/${resumeData.resume_file}`;
+                    $("#resumeLink").attr("href", resumeURL).attr("download", "My_Resume.pdf").show();
+                    // $("#resumeLink")
+                    //     .attr("href", resumeURL)
+                    //     .attr("download", fileName)
+                    //     .text(`📄 Download ${fileName}`)
+                    //     .show();
+                } else {
+                    $("#resumeLink").hide();
+                }
+            },
+            error: function() {
+                $("#resumeLink").hide();
+            }
+        });
+    }
+    fetchAboutMe();
+    // setInterval(fetchAboutMe, 86400000); // Runs every 24 hours (1 day)
+    setInterval(fetchAboutMe, 15000);
+
+
+    // Fetch Portfolio Projects
+    function fetchProjects() {
+        $.get(`${API_URL}/projects`, function(response) {
+            let projectsHtml = "";
+            response.data.forEach(project => {
+                let indicatorsHtml = "";
+                let carouselId = `carousel-${project.id}`;
+    
+                let imagesHtml = "";
+                if (project.images && project.images.length > 0) {
+                    project.images.forEach((image, index) => {
+                        let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${image}`;
+                        imagesHtml += `
+                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                <img src="${imageUrl}" loading="lazy" class="d-block w-100 img-thumbnail" alt="Project Image">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>${project.title}</h5>
+                                    <p>${project.description.substring(0, 50)}...</p>
+                                </div>
+                            </div>`;
+    
+                        indicatorsHtml += `
+                            <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}"
+                            class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>`;
+                    });
+                } else {
+                    // Placeholder image if no images exist
+                    imagesHtml = `
+                        <div class="carousel-item active">
+                            <img src="https://placehold.co/600x400?text=No+Image" class="d-block w-100 img-thumbnail" alt="No Image">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>${project.title}</h5>
+                                <p>${project.description.substring(0, 50)}...</p>
+                            </div>
+                        </div>`;
+                }
+                projectsHtml += `
+                    <div class="col-md-6">
+                        <div class="card project-card">
+                            <!-- Boostrap Carousel -->
+                            <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" data-bs-keyboard="true">
+                                <div class="carousel-indicators">
+                                    ${indicatorsHtml}
+                                </div>
+                                <div class="carousel-inner">
+                                    ${imagesHtml}
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">${project.title}</h5>
+                                <p class="card-text">${project.description.substring(0, 100)}...</p>
+                                <a href="${project.live_url}" class="btn btn-sm btn-primary" target="_blank">View Project</a>
+                                <a href="${project.github_url}" class="btn btn-sm btn-secondary" target="_blank">Github</a>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+            $("#projects").html(projectsHtml);
+    
+            // **Force All Carousels to Start Automatically**
+            $(".carousel").each(function() {
+                let carouselInstance = new bootstrap.Carousel(this, {
+                    interval: 2500,
+                    ride: "carousel"
+                });
+            });
+        });
+    
+        $(".carousel").on("touchstart", function(event) {
+            let xClick = event.originalEvent.touches[0].pageX;
+            $(this).one("touchmove", function(event) {
+                let xMove = event.originalEvent.touches[0].pageX;
+                let sensitivity = 5;
+                if (Math.floor(xClick - xMove) > sensitivity) {
+                    $(this).carousel("next");
+                } else if (Math.floor(xClick - xMove) < -sensitivity) {
+                    $(this).carousel("prev");
+                }
+            });
+        });
+    }
+    fetchProjects();
+    setInterval(fetchProjects, 15000);
+
+    // Fetch Blog Posts
+    function fetchBlog() {
+        $.get(`${API_URL}/blogs`, function(response) {
+            let blogsHtml = "";
+            response.data.forEach(blog => {
+                blogsHtml += `
+                    <div class="col-md-4">
+                        <div class="card blog-card">
+                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${blog.image}" class="card-img-top img-thumbnail" alt="Blog Image">
+                            <div class="card-body">
+                                <h5 class="card-title">${blog.title}</h5>
+                                <p class="card-text">${blog.content.substring(0, 100)}...</p>
+                                <a href="#" class="btn btn-sm btn-primary read-more-btn" data-id="${blog.id}">Read More</a>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+            $("#blogs").html(blogsHtml);
+        });
+    }
+    fetchBlog();
+    setInterval(fetchBlog, 15000);
+
+    // Open Modal on Blog Click
+    $(document).on("click", ".read-more-btn", function() {
+        let blogId = $(this).data("id");
+
+        $.get(`${API_URL}/blogs/${blogId}`, function(blog) {
+            $("#blogModalTitle").text(blog.title);
+            // $("#blogModalImage").attr("src", `https://markneilcordero.com/portfolio-api/public/storage/${blog.image}`);
+            if (blog.image) {
+                $("#blogModalImage").attr("src", `https://markneilcordero.com/portfolio-api/public/storage/${blog.image}`)
+                .css({ "display": "block", "margin": "0 auto", "max-height": "300px", "object-fit": "cover", "border-radius": "8px" });
+            } else {
+                $("#blogModalImage").hide();
+            }
+            // $("#blogModalContent").text(blog.content);
+            $("#blogModalContent").html(blog.content.replace(/\n\n/g, "<p></p>").replace(/\n/g, "<br>"));
+            // $("#blogModalContent").html(`<pre>${blog.content}</pre>`);
+            $("#blogModalCategory").text(blog.category);
+            $("#blogModal").modal("show");
+        }).fail(function() {
+            alert("Failed to load blog details.");
+        });
+    });
+
+    // Fetch Skills
+    function fetchSkills() {
+        $.get(`${API_URL}/skills`, function(response) {
+            let skillsHtml = "";
+            response.forEach(skill => {
+                skillsHtml += `
+                    <div class="col-md-2 col-sm-4 col-6 text-center skill-container" data-aos="flip-up">
+                        <img src="https://markneilcordero.com/portfolio-api/public/storage/${skill.icon}" class="img-thumbnail border border-0 skill-icon" alt="Skill Icon">
+                        <h5>${skill.name}</h5>
+                        <p>${skill.level}</p>
+                    </div>`;
+            });
+            $("#skills").html(skillsHtml);
+        });
+    }
+    fetchSkills();
+    setInterval(fetchSkills, 15000);
+
+    // Fetch Gallery Images
+    function fetchGallery() {
+        $.get(`${API_URL}/gallery`, function(response) {
+            let galleryHtml = "";
+            response.data.forEach(image => {
+                galleryHtml += `
+                    <div class="col-md-3">
+                        <div class="card gallery-card">
+                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${image.image}" class="card-img-top img-thumbnail gallery-image" alt="Gallery Image" data-title="${image.title}" data-description="${image.description}" data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}">
+                            <div class="card-body">
+                                <p class="card-text">${image.title || "Gallery Image"}</p>
+                            </div>
+                        </div>
+                    </div>`;
+            });
+            $("#gallery").html(galleryHtml);
+        });
+    }
+    fetchGallery();
+    setInterval(fetchGallery, 15000);
+
+    // Open Modal on Image Click
+    $(document).on("click", ".gallery-image", function() {
+        let title = $(this).data("title");
+        let description = $(this).data("description");
+        let imageSrc = $(this).data("image");
+
+        $("#galleryModalTitle").text(title || "Gallery Image");
+        $("#galleryModalDescription").text(description || "No description available.");
+        $("#galleryModalImage").attr("src", imageSrc).hide().fadeIn(300);
+
+        $("#galleryModal").modal("show");
+    });
+
+    // Contact Form
+    $("#contactForm").submit(function(event) {
+        event.preventDefault();
+
+        let formData = new FormData(this);
+
+        let submitButton = $("button[type='submit']");
+
+        // Disable button and change text to indicate processing
+        submitButton.prop("disabled", true).html(`
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            Sending...
+        `);
+
+        let contactData = {
+            name: $("#contactForm input[name='name']").val(),
+            email: $("#contactForm input[name='email']").val(),
+            subject: $("#contactForm input[name='subject']").val(),
+            message: $("#contactForm input[name='message']").val()
+        };
+
+        $.ajax({
+            url: `${API_URL}/contact`,
+            type: "POST",
+            headers: {
+                "Accept": "application/json",
+            },
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function(response) {
+                $("#successMsg").show();
+                $("#errorMsg").hide();
+                $("#contactForm")[0].reset();
+            },
+            error: function(xhr) {
+                $("#errorMsg").text("Error sending message. Please try again.").show();
+                $("#successMsg").hide();
+            },
+            complete: function() {
+                // Re-enable button and restore original text after 1 seconds
+                setTimeout(() => {
+                    submitButton.prop("disabled", false).text("Send Message");
+                }, 1000);
+            }
+        });
+    });
 });
 </script>
+<!-- Gallery Modal -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="galleryModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="galleryModalImage" src="" class="img-fluid rounded shadow-lg" alt="Gallery Image">
+                <p id="galleryModalDescription" class="mt-3 text-muted"></p>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Blog Modal -->
+<div class="modal fade" id="blogModal" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="blogModalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="blogModalImage" src="https://placehold.co/600x300?text=No+Image" class="img-fluid mb-3" alt="Blog Image">
+                <p id="blogModalContent"></p>
+                <p><strong>Category:</strong> <span id="blogModalCategory"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" data-aos="flip-up" data-aos-anchor-placement="bottom-bottom">
+    <footer class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 my-4 border-top">
+        <!-- Left Section: Logo + Copyright -->
+        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start">
+            <a href="/" class="mb-2 mb-md-0 me-md-2 text-decoration-none">
+                <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo">
+            </a>
+            <span class="text-body-secondary">&copy; 2025 Mark Neil Cordero</span>
+        </div>
+
+        <!-- Right Section: Social Icons -->
+        <ul class="nav justify-content-center justify-content-md-end list-unstyled d-flex mt-3 mt-md-0">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.instagram.com/cordero.markneil/" aria-label="Instagram">
+                    <img src="images/instagram.svg" width="30" height="30" alt="Instagram">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.facebook.com/markneilcordero/" aria-label="Facebook">
+                    <img src="images/facebook.svg" width="30" height="30" alt="Facebook">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://github.com/markneilcordero" aria-label="GitHub">
+                    <img src="images/github.svg" width="30" height="30" alt="GitHub">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="" aria-label="LinkedIn">
+                    <img src="images/linkedin-original.svg" width="30" height="30" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </footer>
+</div>
+<script>
+    AOS.init();
+</script>
 </body>
 </html>
