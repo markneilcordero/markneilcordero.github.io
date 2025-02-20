@@ -413,14 +413,17 @@ $(document).ready(function() {
         $.get(`${API_URL}/gallery`, function(response) {
             let galleryHtml = "";
             response.data.forEach(image => {
+                let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${image.image}`;
+                let title = image.title || "Gallery Image";
+                let description = image.description || "No description available.";
                 galleryHtml += `
                     <div class="col-md-3">
                         <div class="card gallery-card">
-                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${image.image}" class="card-img-top img-thumbnail gallery-image" alt="Gallery Image" data-title="${image.title}" data-description="${image.description}" data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}"
+                            <img src="${imageUrl}" class="card-img-top img-thumbnail gallery-image"
                             alt="Gallery Image"
-                            data-title="${image.title}"
-                            data-description="${image.description}"
-                            data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}">
+                            data-title="${title}"
+                            data-description="${description}"
+                            data-image="${imageUrl}">
                             <div class="card-body text-center">
                                 <p class="card-text">${image.title || "Gallery Image"}</p>
                                 <p class="card-text">${image.description || "No description available."}</p>
