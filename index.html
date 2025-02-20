@@ -216,6 +216,29 @@ body { font-family: Arial, sans-serif; }
 $(document).ready(function() {
     const API_URL = "https://markneilcordero.com/portfolio-api/public/api";
 
+    // Fetch Resume File
+    $.ajax({
+        url: `${API_URL}/resume`,
+        type: "GET",
+        success: function(resumeData) {
+            if (resumeData && resumeData.resume_file) {
+                let fileName = resumeData.resume_file.split('/').pop();
+                let resumeURL = `https://markneilcordero.com/portfolio-api/public/storage/${resumeData.resume_file}`;
+                $("#resumeLink").attr("href", resumeURL).attr("download", "My_Resume.pdf").show();
+                // $("#resumeLink")
+                //     .attr("href", resumeURL)
+                //     .attr("download", fileName)
+                //     .text(`📄 Download ${fileName}`)
+                //     .show();
+            } else {
+                $("#resumeLink").hide();
+            }
+        },
+        error: function() {
+            $("#resumeLink").hide();
+        }
+    });
+
     // Fetch About Me Data
     function fetchAboutMe() {
         $.get(`${API_URL}/about`, function (data) {
@@ -224,32 +247,8 @@ $(document).ready(function() {
             $("#bio").text(data.bio);
             $("#resumeLink").attr("href", `${API_URL}/resume`);
         });
-
-        // Fetch Resume File
-        $.ajax({
-            url: `${API_URL}/resume`,
-            type: "GET",
-            success: function(resumeData) {
-                if (resumeData && resumeData.resume_file) {
-                    let fileName = resumeData.resume_file.split('/').pop();
-                    let resumeURL = `https://markneilcordero.com/portfolio-api/public/storage/${resumeData.resume_file}`;
-                    $("#resumeLink").attr("href", resumeURL).attr("download", "My_Resume.pdf").show();
-                    // $("#resumeLink")
-                    //     .attr("href", resumeURL)
-                    //     .attr("download", fileName)
-                    //     .text(`📄 Download ${fileName}`)
-                    //     .show();
-                } else {
-                    $("#resumeLink").hide();
-                }
-            },
-            error: function() {
-                $("#resumeLink").hide();
-            }
-        });
     }
     fetchAboutMe();
-    // setInterval(fetchAboutMe, 86400000); // Runs every 24 hours (1 day)
     setInterval(fetchAboutMe, 15000);
 
 
