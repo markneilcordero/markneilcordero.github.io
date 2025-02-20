@@ -24,7 +24,6 @@ body { font-family: Arial, sans-serif; }
     padding: 60px 20px;
     position: relative;
 }
-
 /* Dark Overlay for Better Readability */
 .hero-section::before {
     content: "";
@@ -52,7 +51,6 @@ body { font-family: Arial, sans-serif; }
     font-weight: bold;
     margin-bottom: 15px; /* Add spacing below */
 }
-
 .hero-section p {
     font-size: 1.2rem; /* Increase font size */
     max-width: 800px; /* Prevent text from stretching too wide */
@@ -60,13 +58,16 @@ body { font-family: Arial, sans-serif; }
     margin: 0 auto 20px; /* Center text & add spacing */
     padding: 0 15px; /* Add small padding for better spacing on mobile */
 }
-
 .hero-section .btn {
     font-size: 1.1rem; /* Make button text slightly larger */
     padding: 10px 20px; /* Increase button padding */
 }
-
-
+.hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
 .section-title { margin-top: 40px; text-align: center; font-weight: bold; }
 .project-card, .blog-card, .gallery-card { margin-bottom: 20px; }
 .img-thumbnail { height: 150px; object-fit: cover; }
@@ -102,13 +103,11 @@ body { font-family: Arial, sans-serif; }
     width: 120px; /* Set consistent column width */
     margin: 10px auto; /* Center the items */
 }
-
 .skill-icon {
     width: 80px; /* Adjust icon size */
     height: 80px;
     object-fit: contain; /* Prevents cropping */
 }
-
 .skill-level {
     font-size: 14px;
     color: #555;
@@ -135,7 +134,7 @@ body { font-family: Arial, sans-serif; }
                 </div>
             </div>
         </div>
-        <div class="col-md-8 text-md-start text-center">
+        <div class="col-md-8 text-md-start text-center hero-text">
             <h1 id="name" class="fw-bold text-center"></h1>
             <p id="bio" class="text-center"></p>
             <div class="text-center">
