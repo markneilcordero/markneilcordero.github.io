@@ -421,9 +421,16 @@ $(document).ready(function() {
                             data-title="${image.title}"
                             data-description="${image.description}"
                             data-image="https://markneilcordero.com/portfolio-api/public/storage/${image.image}">
-                            <div class="card-body">
+                            <div class="card-body text-center">
                                 <p class="card-text">${image.title || "Gallery Image"}</p>
                                 <p class="card-text">${image.description || "No description available."}</p>
+                                <!-- View Image Button -->
+                                <button class="btn btn-primary view-image-btn"
+                                    data-title="${title}"
+                                    data-description="${description}"
+                                    data-image="${imageUrl}">
+                                    View Image
+                                </button>
                             </div>
                         </div>
                     </div>`;
@@ -435,7 +442,7 @@ $(document).ready(function() {
     setInterval(fetchGallery, 15000);
 
     // Open Modal on Image Click
-    $(document).on("click", ".gallery-image", function() {
+    $(document).on("click", ".gallery-image, .view-image-btn", function() {
         let title = $(this).data("title");
         let description = $(this).data("description");
         let imageSrc = $(this).data("image");
