@@ -216,29 +216,7 @@ body { font-family: Arial, sans-serif; }
 $(document).ready(function() {
     const API_URL = "https://markneilcordero.com/portfolio-api/public/api";
 
-    // Fetch Resume File
-    $.ajax({
-        url: `${API_URL}/resume`,
-        type: "GET",
-        success: function(resumeData) {
-            if (resumeData && resumeData.resume_file) {
-                let fileName = resumeData.resume_file.split('/').pop();
-                let resumeURL = `https://markneilcordero.com/portfolio-api/public/storage/${resumeData.resume_file}`;
-                $("#resumeLink").attr("href", resumeURL).attr("download", "My_Resume.pdf").show();
-                // $("#resumeLink")
-                //     .attr("href", resumeURL)
-                //     .attr("download", fileName)
-                //     .text(`📄 Download ${fileName}`)
-                //     .show();
-            } else {
-                $("#resumeLink").hide();
-            }
-        },
-        error: function() {
-            $("#resumeLink").hide();
-        }
-    });
-
+    
     // Fetch About Me Data
     function fetchAboutMe() {
         $.get(`${API_URL}/about`, function (data) {
@@ -247,9 +225,32 @@ $(document).ready(function() {
             $("#bio").text(data.bio);
             $("#resumeLink").attr("href", `${API_URL}/resume`);
         });
+        
+        // Fetch Resume File
+        $.ajax({
+            url: `${API_URL}/resume`,
+            type: "GET",
+            success: function(resumeData) {
+                if (resumeData && resumeData.resume_file) {
+                    let fileName = resumeData.resume_file.split('/').pop();
+                    let resumeURL = `https://markneilcordero.com/portfolio-api/public/storage/${resumeData.resume_file}`;
+                    $("#resumeLink").attr("href", resumeURL).attr("download", "My_Resume.pdf").show();
+                    // $("#resumeLink")
+                    //     .attr("href", resumeURL)
+                    //     .attr("download", fileName)
+                    //     .text(`📄 Download ${fileName}`)
+                    //     .show();
+                } else {
+                    $("#resumeLink").hide();
+                }
+            },
+            error: function() {
+                $("#resumeLink").hide();
+            }
+        });
     }
     fetchAboutMe();
-    setInterval(fetchAboutMe, 15000);
+    setInterval(fetchAboutMe, 5000);
 
 
     // Fetch Portfolio Projects
@@ -342,7 +343,7 @@ $(document).ready(function() {
         });
     }
     fetchProjects();
-    setInterval(fetchProjects, 15000);
+    setInterval(fetchProjects, 5000);
 
     // Fetch Blog Posts
     function fetchBlog() {
@@ -365,7 +366,7 @@ $(document).ready(function() {
         });
     }
     fetchBlog();
-    setInterval(fetchBlog, 15000);
+    setInterval(fetchBlog, 5000);
 
     // Open Modal on Blog Click
     $(document).on("click", ".read-more-btn", function() {
@@ -406,7 +407,7 @@ $(document).ready(function() {
         });
     }
     fetchSkills();
-    setInterval(fetchSkills, 15000);
+    setInterval(fetchSkills, 5000);
 
     // Fetch Gallery Images
     function fetchGallery() {
@@ -445,7 +446,7 @@ $(document).ready(function() {
         });
     }
     fetchGallery();
-    setInterval(fetchGallery, 15000);
+    setInterval(fetchGallery, 5000);
 
     // Open Modal on Image Click
     $(document).on("click", ".gallery-image, .view-image-btn", function() {
