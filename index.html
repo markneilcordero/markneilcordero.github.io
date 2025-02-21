@@ -55,7 +55,7 @@ body { font-family: Arial, sans-serif; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Adjust transparency */
+    background: rgba(0, 0, 0, 0.7); /* Adjust transparency */
     z-index: 1;
 }
 /* Ensures content stays visible */
@@ -98,9 +98,9 @@ body { font-family: Arial, sans-serif; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ddd;
+    /* background: #ddd; */
     /* border: 4px solid #000; */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
 }
 .profile-img-container img {
     width: 100%;
@@ -225,6 +225,42 @@ body { font-family: Arial, sans-serif; }
             </button>
         </div>
     </form>
+</div>
+
+<div class="container">
+    <footer class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 my-4 border-top" data-aos="flip-up" data-aos-anchor-placement="bottom-bottom">
+        <!-- Left Section: Logo + Copyright -->
+        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start gx-0">
+            <a href="index.html" class="mb-2 mb-md-0 me-md-2 text-decoration-none">
+                <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo">
+            </a>
+            <span class="text-body-secondary">&copy; 2025 Mark Neil Cordero</span>
+        </div>
+
+        <!-- Right Section: Social Icons -->
+        <ul class="nav justify-content-center justify-content-md-end list-unstyled d-flex mt-3 mt-md-0">
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.instagram.com/cordero.markneil/" aria-label="Instagram">
+                    <img src="images/instagram.svg" width="30" height="30" alt="Instagram">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://www.facebook.com/markneilcordero/" aria-label="Facebook">
+                    <img src="images/facebook.svg" width="30" height="30" alt="Facebook">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="https://github.com/markneilcordero" aria-label="GitHub">
+                    <img src="images/github.svg" width="30" height="30" alt="GitHub">
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-body-secondary" href="" aria-label="LinkedIn">
+                    <img src="images/linkedin-original.svg" width="30" height="30" alt="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </footer>
 </div>
 
 
@@ -606,42 +642,6 @@ $(document).ready(function() {
             </div>
         </div>
     </div>
-</div>
-
-<div class="container" data-aos="flip-up" data-aos-anchor-placement="bottom-bottom">
-    <footer class="d-flex flex-column flex-md-row justify-content-between align-items-center py-3 my-4 border-top">
-        <!-- Left Section: Logo + Copyright -->
-        <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start gx-0">
-            <a href="/" class="mb-2 mb-md-0 me-md-2 text-decoration-none">
-                <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo">
-            </a>
-            <span class="text-body-secondary">&copy; 2025 Mark Neil Cordero</span>
-        </div>
-
-        <!-- Right Section: Social Icons -->
-        <ul class="nav justify-content-center justify-content-md-end list-unstyled d-flex mt-3 mt-md-0">
-            <li class="ms-3">
-                <a class="text-body-secondary" href="https://www.instagram.com/cordero.markneil/" aria-label="Instagram">
-                    <img src="images/instagram.svg" width="30" height="30" alt="Instagram">
-                </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="https://www.facebook.com/markneilcordero/" aria-label="Facebook">
-                    <img src="images/facebook.svg" width="30" height="30" alt="Facebook">
-                </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="https://github.com/markneilcordero" aria-label="GitHub">
-                    <img src="images/github.svg" width="30" height="30" alt="GitHub">
-                </a>
-            </li>
-            <li class="ms-3">
-                <a class="text-body-secondary" href="" aria-label="LinkedIn">
-                    <img src="images/linkedin-original.svg" width="30" height="30" alt="LinkedIn">
-                </a>
-            </li>
-        </ul>
-    </footer>
 </div>
 <script>
     AOS.init();
