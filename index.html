@@ -470,41 +470,64 @@ $(document).ready(function() {
     // Fetch Gallery Images
     function fetchGallery() {
         $.get(`${API_URL}/gallery`, function(response) {
-            let galleryHtml = "";
-            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"];
+            let galleryData = response.data;
+            let categorizedGallery = {};
 
-            response.data.forEach(imagePost => {
-                let images = JSON.parse(imagePost.image); // Parse JSON array of images
-                let firstImage = images.length > 0 ? images[0] : "default-placeholder.jpg"; // Use first image or placeholder
-                let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${firstImage}`;
+            galleryData.forEach(imagePost => {
+                let images = JSON.parse(imagePost.image);
+                let category = imagePost.category || "Uncategorized";
+                let title = imagePost.title || "Gallery Image";
                 let description = imagePost.description || "No description available.";
-                let category = imagePost.category ? imagePost.category : "Uncategorized";
 
-                let imagesJson = JSON.stringify(images); // Convert images array to string
+                if (!categorizedGallery[category]) {
+                    categorizedGallery[category] = [];
+                }
 
+                categorizedGallery[category].push({
+                    title: title,
+                    description: description,
+                    images: images
+                });
+            });
+
+            let galleryHtml = "";
+
+            Object.keys(categorizedGallery).forEach(category => {
                 galleryHtml += `
-                <div class="col-md-3" data-aos="${animations[Math.floor(Math.random() * animations.length)]}">
-                    <div class="card gallery-card">
-                        <img src="https://markneilcordero.com/portfolio-api/public/storage/${images[0]}" 
-                            class="card-img-top img-thumbnail gallery-image"
-                            data-title="${imagePost.title || 'Gallery Image'}"
-                            data-description="${description}" 
-                            data-images='${imagesJson}'>
-                        <div class="card-body text-center">
-                            <p class="card-text">${imagePost.title || "Gallery Image"}</p>
-                            <p class="card-text">${description}</p>
-                            <p class="card-text">
-                                <span class="badge bg-secondary">${category}</span>
-                            </p>
-                            <button class="btn btn-primary view-image-btn"
-                                data-title="${imagePost.title || 'Gallery Image'}"
-                                data-description="${description}"
-                                data-images='${imagesJson}'>
-                                View Images
-                            </button>
+                    <h3 class="text-center mt-4">${category}</h3>
+                    <div class="row">
+                `;
+
+                let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"];
+
+                categorizedGallery[category].forEach(imageData => {
+                    let imagesJson = JSON.stringify(imageData.images);
+                    let firstImage = imageData.images.length > 0 ? imageData.images[0] : "https://placehold.co/600x400?text=No+Image";
+                    let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${firstImage}`;
+
+                    galleryHtml += `
+                        <div class="col-md-3 col-sm-6 mb-4" data-aos="${animations[Math.floor(Math.random() * animations.length)]}">
+                            <div class="card gallery-card">
+                                <img src="${imageUrl}" class="card-img-top img-thumbnail gallery-image"
+                                    data-title="${imageData.title}"
+                                    data-description="${imageData.description}"
+                                    data-images='${imagesJson}'>
+                                <div class="card-body text-center">
+                                    <p class="card-text">${imageData.title}</p>
+                                    <button class="btn btn-primary view-image-btn"
+                                        data-title="${imageData.title}"
+                                        data-description="${imageData.description}"
+                                        data-images='${imagesJson}'>
+                                        View Images
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>`;
+                    `;
+                });
+
+                galleryHtml += `</div>`;
+
             });
 
             $("#gallery").html(galleryHtml);
