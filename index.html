@@ -9,6 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link rel="preload" as="image" href="images/about-bg.jpg">
 <style>
 html {
     scroll-behavior: smooth;
@@ -150,7 +151,7 @@ body { font-family: Arial, sans-serif; }
         <div class="row align-items-center gx-0">
             <div class="col-md-4 text-center">
                 <div class="profile-img-container">
-                    <img id="profileImage" src="" alt="Profile Image">
+                    <img id="profileImage" src="" alt="Profile Image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -235,7 +236,7 @@ body { font-family: Arial, sans-serif; }
         <!-- Left Section: Logo + Copyright -->
         <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start gx-0">
             <a href="index.html" class="mb-2 mb-md-0 me-md-2 text-decoration-none">
-                <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo">
+                <img src="images/mn-logo.svg" width="60" height="60" alt="MN Logo" loading="lazy">
             </a>
             <span class="text-body-secondary">&copy; 2025 Mark Neil Cordero</span>
         </div>
@@ -244,22 +245,22 @@ body { font-family: Arial, sans-serif; }
         <ul class="nav justify-content-center justify-content-md-end list-unstyled d-flex mt-3 mt-md-0">
             <li class="ms-3">
                 <a class="text-body-secondary" href="https://www.instagram.com/cordero.markneil/" aria-label="Instagram">
-                    <img src="images/instagram.svg" width="30" height="30" alt="Instagram">
+                    <img src="images/instagram.svg" width="30" height="30" alt="Instagram" loading="lazy">
                 </a>
             </li>
             <li class="ms-3">
                 <a class="text-body-secondary" href="https://www.facebook.com/markneilcordero/" aria-label="Facebook">
-                    <img src="images/facebook.svg" width="30" height="30" alt="Facebook">
+                    <img src="images/facebook.svg" width="30" height="30" alt="Facebook" loading="lazy">
                 </a>
             </li>
             <li class="ms-3">
                 <a class="text-body-secondary" href="https://github.com/markneilcordero" aria-label="GitHub">
-                    <img src="images/github.svg" width="30" height="30" alt="GitHub">
+                    <img src="images/github.svg" width="30" height="30" alt="GitHub" loading="lazy">
                 </a>
             </li>
             <li class="ms-3">
                 <a class="text-body-secondary" href="" aria-label="LinkedIn">
-                    <img src="images/linkedin-original.svg" width="30" height="30" alt="LinkedIn">
+                    <img src="images/linkedin-original.svg" width="30" height="30" alt="LinkedIn" loading="lazy">
                 </a>
             </li>
         </ul>
@@ -425,7 +426,7 @@ $(document).ready(function() {
                 blogsHtml += `
                     <div class="col-md-4">
                         <div class="card blog-card">
-                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${blog.image}" class="card-img-top img-thumbnail" alt="Blog Image">
+                            <img src="https://markneilcordero.com/portfolio-api/public/storage/${blog.image}" class="card-img-top img-thumbnail" alt="Blog Image" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">${blog.title}</h5>
                                 <p class="card-text">${blog.content.substring(0, 100)}...</p>
@@ -472,7 +473,7 @@ $(document).ready(function() {
                 let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 skillsHtml += `
                     <div class="col-md-2 col-sm-4 col-6 text-center skill-container" data-aos="${randomAos}">
-                        <img src="https://markneilcordero.com/portfolio-api/public/storage/${skill.icon}" class="img-thumbnail border border-0 skill-icon" alt="Skill Icon">
+                        <img src="https://markneilcordero.com/portfolio-api/public/storage/${skill.icon}" class="img-thumbnail border border-0 skill-icon" alt="Skill Icon" loading="lazy">
                         <h5>${skill.name}</h5>
                         <p>${skill.level}</p>
                     </div>`;
@@ -524,7 +525,7 @@ $(document).ready(function() {
                     galleryHtml += `
                         <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card gallery-card">
-                                <img src="${imageUrl}" class="card-img-top img-thumbnail gallery-image"
+                                <img src="${imageUrl}" loading="lazy" class="card-img-top img-thumbnail gallery-image"
                                     data-title="${imageData.title}"
                                     data-description="${imageData.description}"
                                     data-images='${imagesJson}'>
@@ -575,7 +576,7 @@ $(document).ready(function() {
 
                 carouselHtml += `
                     <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                        <img src="${imageUrl}" class="d-block w-100 img-thumbnail" style="max-height: 500px; object-fit: contain;">
+                        <img src="${imageUrl}" loading="lazy" class="d-block w-100 img-thumbnail" style="max-height: 500px; object-fit: contain;">
                     </div>`;
             });
 
@@ -679,7 +680,7 @@ $(document).ready(function() {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img id="blogModalImage" src="https://placehold.co/600x300?text=No+Image" class="img-fluid mb-3" alt="Blog Image">
+                <img id="blogModalImage" loading="lazy" src="https://placehold.co/600x300?text=No+Image" class="img-fluid mb-3" alt="Blog Image">
                 <p id="blogModalContent"></p>
                 <p><strong>Category:</strong> <span id="blogModalCategory"></span></p>
             </div>
