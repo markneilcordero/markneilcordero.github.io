@@ -344,7 +344,7 @@ $(document).ready(function() {
                         </div>`;
                 }
                 projectsHtml += `
-                    <div class="col-md-6" data-aos="${randomAos}">
+                    <div class="col-md-2" data-aos="${randomAos}">
                         <div class="card project-card">
                             <!-- Boostrap Carousel -->
                             <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" data-bs-keyboard="true">
@@ -365,7 +365,7 @@ $(document).ready(function() {
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">${project.title}</h5>
-                                <p class="card-text">${project.description.substring(0, 100)}...</p>
+                                <p class="card-text">${project.description}</p>
                                 <a href="${project.live_url}" class="btn btn-sm btn-primary" target="_blank">View Project</a>
                                 <a href="${project.github_url}" class="btn btn-sm btn-secondary" target="_blank">Github</a>
                             </div>
