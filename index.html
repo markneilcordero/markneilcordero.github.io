@@ -167,25 +167,25 @@ body { font-family: Arial, sans-serif; }
 </section>
 
 <!-- Projects Section -->
-<div class="container min-vh-100">
+<div class="container min-vh-100" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="section-title">Projects</h2>
     <div class="row" id="projects"></div>
 </div>
 
 <!-- Blog Section -->
-<div class="container min-vh-100">
+<div class="container min-vh-100" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="section-title">Latest Blog Posts</h2>
     <div class="row" id="blogs"></div>
 </div>
 
 <!-- Skills Section -->
-<div class="container min-vh-100">
+<div class="container min-vh-100" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="section-title">Skills</h2>
     <div class="row" id="skills"></div>
 </div>
 
 <!-- Gallery Section -->
-<div class="container min-vh-100">
+<div class="container min-vh-100" data-aos="fade-up" data-aos-duration="3000">
     <h2 class="section-title">Gallery</h2>
     <div class="row" id="gallery"></div>
 </div>
@@ -311,69 +311,82 @@ $(document).ready(function() {
     // Fetch Portfolio Projects
     function fetchProjects() {
         $.get(`${API_URL}/projects`, function(response) {
-            let projectsHtml = "";
-            // let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
-            response.data.forEach(project => {
-                // let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
-                let indicatorsHtml = "";
-                let carouselId = `carousel-${project.id}`;
-    
-                let imagesHtml = "";
-                if (project.images && project.images.length > 0) {
-                    project.images.forEach((image, index) => {
-                        let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${image}`;
-                        imagesHtml += `
-                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                                <img src="${imageUrl}" loading="lazy" class="d-block w-100 img-thumbnail" alt="Project Image">
-                                <div class="carousel-caption d-none d-md-block">
-                                    <!-- <h5>${project.title}</h5> -->
-                                    <!-- <p>${project.description.substring(0, 50)}...</p> -->
-                                </div>
-                            </div>`;
-    
-                        indicatorsHtml += `
-                            <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}"
-                            class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>`;
-                    });
-                } else {
-                    // Placeholder image if no images exist
-                    imagesHtml = `
-                        <div class="carousel-item active">
-                            <img src="https://placehold.co/600x400?text=No+Image" class="d-block w-100 img-thumbnail" alt="No Image">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>${project.title}</h5>
-                                <p>${project.description.substring(0, 50)}...</p>
-                            </div>
-                        </div>`;
+            let projectsData = response.data;
+            let categorizedProjects = {};
+
+            projectsData.forEach(project => {
+                let category = project.category || "Uncategorized";
+                if (!categorizedProjects[category]) {
+                    categorizedProjects[category] = [];
                 }
+                categorizedProjects[category].push(project);
+            });
+
+            let projectsHtml = "";
+
+            Object.keys(categorizedProjects).forEach(category => {
                 projectsHtml += `
-                    <div class="col-md-4">
-                        <div class="card project-card">
-                            <!-- Boostrap Carousel -->
-                            <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" data-bs-keyboard="true">
-                                <div class="carousel-indicators">
-                                    ${indicatorsHtml}
+                    <h3 class="text-center mt-4">${category}</h3>
+                    <div class="row">
+                `;
+
+                categorizedProjects[category].forEach(project => {
+                    let carouselId = `carousel-${project.id}`;
+                    let indicatorsHtml = "";
+                    let imagesHtml = "";
+
+                    if (project.images && project.images.length > 0) {
+                        project.images.forEach((image, index) => {
+                            let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${image}`;
+                            imagesHtml += `
+                                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                    <img src="${imageUrl}" loading="lazy" class="d-block w-100 img-thumbnail" alt="Project Image">
                                 </div>
-                                <div class="carousel-inner">
-                                    ${imagesHtml}
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+                            `;
+
+                            indicatorsHtml += `
+                                <button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${index}"
+                                class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>
+                            `;
+                        });
+                    } else {
+                        imagesHtml = `
+                            <div class="carousel-item active">
+                                <img src="https://placehold.co/600x400?text=No+Image" class="d-block w-100 img-thumbnail" alt="No Image">
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">${project.title}</h5>
-                                <p class="card-text">${project.description}</p>
-                                <a href="${project.live_url}" class="btn btn-sm btn-primary" target="_blank">View Project</a>
-                                <a href="${project.github_url}" class="btn btn-sm btn-secondary" target="_blank">Github</a>
+                        `;
+                    }
+
+                    projectsHtml += `
+                        <div class="col-md-4">
+                            <div class="card project-card">
+                                <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        ${indicatorsHtml}
+                                    </div>
+                                    <div class="carousel-inner">
+                                        ${imagesHtml}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">${project.title}</h5>
+                                    <p class="card-text">${project.description}</p>
+                                    <a href="${project.live_url}" class="btn btn-sm btn-primary" target="_blank">View Project</a>
+                                    <a href="${project.github_url}" class="btn btn-sm btn-secondary" target="_blank">GitHub</a>
+                                </div>
                             </div>
                         </div>
-                    </div>`;
+                    `;
+                });
+                projectsHtml += `</div>`;
             });
             $("#projects").html(projectsHtml);
     
