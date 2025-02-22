@@ -87,7 +87,7 @@ body { font-family: Arial, sans-serif; }
 }
 .section-title { margin-top: 40px; text-align: center; font-weight: bold; }
 .project-card, .blog-card, .gallery-card { margin-bottom: 20px; }
-.img-thumbnail { height: 150px; object-fit: cover; }
+.img-thumbnail { height: 300px; object-fit: cover; }
 .carousel-item img { min-height: 350px; object-fit: cover; border-radius: 10px; }
 #projects { padding: 40px 0; }
 .profile-img-container {
@@ -478,6 +478,7 @@ $(document).ready(function() {
                 let firstImage = images.length > 0 ? images[0] : "default-placeholder.jpg"; // Use first image or placeholder
                 let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${firstImage}`;
                 let description = imagePost.description || "No description available.";
+                let category = imagePost.category ? imagePost.category : "Uncategorized";
 
                 let imagesJson = JSON.stringify(images); // Convert images array to string
 
@@ -492,6 +493,9 @@ $(document).ready(function() {
                         <div class="card-body text-center">
                             <p class="card-text">${imagePost.title || "Gallery Image"}</p>
                             <p class="card-text">${description}</p>
+                            <p class="card-text">
+                                <span class="badge bg-secondary">${category}</span>
+                            </p>
                             <button class="btn btn-primary view-image-btn"
                                 data-title="${imagePost.title || 'Gallery Image'}"
                                 data-description="${description}"
