@@ -10,6 +10,9 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <style>
+html {
+    scroll-behavior: smooth;
+}
 /* Prevent horizontal scrolling */
 html, body {
     overflow-x: hidden;
@@ -309,9 +312,9 @@ $(document).ready(function() {
     function fetchProjects() {
         $.get(`${API_URL}/projects`, function(response) {
             let projectsHtml = "";
-            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
+            // let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
             response.data.forEach(project => {
-                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
+                // let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 let indicatorsHtml = "";
                 let carouselId = `carousel-${project.id}`;
     
@@ -344,7 +347,7 @@ $(document).ready(function() {
                         </div>`;
                 }
                 projectsHtml += `
-                    <div class="col-md-4" data-aos="${randomAos}">
+                    <div class="col-md-4">
                         <div class="card project-card">
                             <!-- Boostrap Carousel -->
                             <div id="${carouselId}" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" data-bs-keyboard="true">
@@ -397,17 +400,17 @@ $(document).ready(function() {
         });
     }
     fetchProjects();
-    setInterval(fetchProjects, 8000);
+    // setInterval(fetchProjects, 8000);
 
     // Fetch Blog Posts
     function fetchBlog() {
         $.get(`${API_URL}/blogs`, function(response) {
             let blogsHtml = "";
-            let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
+            // let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"]; // Add more animations if needed
             response.data.forEach(blog => {
-                let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
+                // let randomAos = animations[Math.floor(Math.random() * animations.length)]; // Pick a random animation
                 blogsHtml += `
-                    <div class="col-md-4" data-aos="${randomAos}">
+                    <div class="col-md-4">
                         <div class="card blog-card">
                             <img src="https://markneilcordero.com/portfolio-api/public/storage/${blog.image}" class="card-img-top img-thumbnail" alt="Blog Image">
                             <div class="card-body">
@@ -422,7 +425,7 @@ $(document).ready(function() {
         });
     }
     fetchBlog();
-    setInterval(fetchBlog, 8000);
+    // setInterval(fetchBlog, 8000);
 
     // Open Modal on Blog Click
     $(document).on("click", ".read-more-btn", function() {
@@ -465,7 +468,7 @@ $(document).ready(function() {
         });
     }
     fetchSkills();
-    setInterval(fetchSkills, 8000);
+    // setInterval(fetchSkills, 8000);
 
     // Fetch Gallery Images
     function fetchGallery() {
@@ -498,7 +501,7 @@ $(document).ready(function() {
                     <div class="row">
                 `;
 
-                let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"];
+                // let animations = ["flip-left", "flip-right", "flip-up", "flip-down", "fade-up", "fade-down", "fade-right", "fade-left"];
 
                 categorizedGallery[category].forEach(imageData => {
                     let imagesJson = JSON.stringify(imageData.images);
@@ -506,7 +509,7 @@ $(document).ready(function() {
                     let imageUrl = `https://markneilcordero.com/portfolio-api/public/storage/${firstImage}`;
 
                     galleryHtml += `
-                        <div class="col-md-3 col-sm-6 mb-4" data-aos="${animations[Math.floor(Math.random() * animations.length)]}">
+                        <div class="col-md-3 col-sm-6 mb-4">
                             <div class="card gallery-card">
                                 <img src="${imageUrl}" class="card-img-top img-thumbnail gallery-image"
                                     data-title="${imageData.title}"
@@ -536,7 +539,7 @@ $(document).ready(function() {
         });
     }
     fetchGallery();
-    setInterval(fetchGallery, 8000);
+    // setInterval(fetchGallery, 8000);
 
     // Open Modal on Image Click
     $(document).on("click", ".view-image-btn, .gallery-image", function() {
@@ -671,7 +674,14 @@ $(document).ready(function() {
     </div>
 </div>
 <script>
-    AOS.init();
+AOS.init();
+let scrollTimeout;
+$(window).on("scroll", function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        console.log("Smooth scrolling optimized!"); // ✅ Testing log
+    }, 100); // Adjust delay (100ms is a good balance)
+});
 </script>
 </body>
 </html>
