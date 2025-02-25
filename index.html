@@ -141,6 +141,21 @@ body { font-family: Arial, sans-serif; }
     max-width: 600px; /* Prevents form from being too wide */
     margin: auto;
 }
+.blog-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 400px;
+}
+#blogModalImage {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
 </style>
 </head>
 <body>
@@ -450,7 +465,13 @@ $(document).ready(function() {
             // $("#blogModalImage").attr("src", `https://markneilcordero.com/portfolio-api/public/storage/${blog.image}`);
             if (blog.image) {
                 $("#blogModalImage").attr("src", `https://markneilcordero.com/portfolio-api/public/storage/${blog.image}`)
-                .css({ "display": "block", "margin": "0 auto", "max-height": "300px", "object-fit": "cover", "border-radius": "8px" });
+                .css({
+                    "display": "block",
+                    "margin": "0 auto",
+                    "max-height": "500px",
+                    "object-fit": "contain",
+                    "border-radius": "8px",
+                });
             } else {
                 $("#blogModalImage").hide();
             }
