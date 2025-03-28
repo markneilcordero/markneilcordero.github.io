@@ -22,6 +22,8 @@
       body {
         display: flex;
         flex-direction: column;
+        background-color: #fff; /* Removed gradient background */
+        color: #212529;
       }
       .main-content {
         flex: 1;
@@ -34,14 +36,20 @@
       }
       .skill-card {
         border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.15),
+          rgba(0, 0, 0, 0.05)
+        );
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
         padding: 20px;
-        transition: 0.3s ease-in-out;
-        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
         text-align: center;
+        color: #212529;
       }
       .skill-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
       }
       .skill-icon {
         font-size: 50px;
@@ -58,15 +66,13 @@
         border-radius: 8px;
         overflow: hidden;
       }
-
       .progress-bar {
-        background-image: linear-gradient(90deg, #0d6efd, #6610f2);
+        background-image: linear-gradient(90deg, #00c6ff, #0072ff);
         background-size: 200% 100%;
         animation: progressBarAnim 1.5s ease infinite;
       }
-
       .skill-label {
-        font-weight: 500;
+        font-weight: 600;
       }
       @keyframes progressBarAnim {
         0% {
