@@ -33,21 +33,40 @@
         text-align: center;
       }
       .blog-card {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #ffffff, #f0f4ff);
         border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.2s ease-in-out;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
         height: 100%;
+        border: none;
       }
+
       .blog-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
       }
+
       .blog-img {
         height: 200px;
         object-fit: contain;
         width: 100%;
         padding: 16px;
+        background: linear-gradient(to bottom, #ffffff, #eef1f8);
+        border-bottom: 1px solid #dee2e6;
       }
+
+      .btn-gradient {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: #fff !important;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .btn-gradient:hover {
+        background: linear-gradient(135deg, #6610f2, #0d6efd);
+        transform: translateY(-1px);
+      }
+
       .truncate {
         overflow: hidden;
         display: -webkit-box;
@@ -109,7 +128,7 @@
           <span class="badge bg-info">${blog.author}</span>
           <a href="blog_page.html?id=${
             blog.id
-          }" class="btn btn-sm btn-outline-primary">Read More</a>
+          }" class="btn btn-sm btn-gradient">Read More</a>
 
         </div>
       </div>
