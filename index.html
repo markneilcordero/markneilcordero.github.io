@@ -37,6 +37,12 @@
         border-radius: 50%;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
+      .bio-section {
+        background: #f8f9fa;
+        border-left: 5px solid #0d6efd;
+        font-family: "Segoe UI", sans-serif;
+      }
+
       .about-section {
         padding: 60px 0;
       }
@@ -106,12 +112,23 @@
           method: "GET",
           success: function (data) {
             $("#about").html(`
-                <div class="col-md-6">
-                    <img src="https://markneilcordero.com/jquery-portfolio-api/public/${data.profile_image}" alt="${data.name}" class="profile-img mb-4">
-                    <h2>${data.name}</h2>
-                    <h5 class="text-muted">${data.title}</h5>
-                    <p class="mt-4">${data.bio}</p>
-                </div>
+                <div class="col-md-8 mx-auto text-center">
+  <img src="https://markneilcordero.com/jquery-portfolio-api/public/${data.profile_image}" 
+       alt="${data.name}" 
+       class="profile-img mb-4" 
+       style="max-width: 180px; border-radius: 50%;" />
+
+  <h2 class="fw-bold mb-1">${data.name}</h2>
+  <h5 class="text-muted mb-3">${data.title}</h5>
+
+  <div class="bio-section mt-4 mb-5 px-4 py-4 rounded-4 shadow-sm border-start border-4 border-primary bg-light">
+    <p class="lead text-secondary fw-normal mb-0" style="line-height: 1.8; font-size: 1.05rem;">
+      ${data.bio}
+    </p>
+  </div>
+</div>
+
+
             `);
           },
           error: function (xhr) {
