@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Skills</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .main-content {
+        flex: 1;
+      }
+      footer {
+        background-color: #212529;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .skill-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+        background-color: #fff;
+        text-align: center;
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+      }
+      .skill-icon {
+        font-size: 50px;
+        margin-bottom: 10px;
+        background: linear-gradient(45deg, #0d6efd, #6610f2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+      .progress {
+        height: 14px;
+        background-color: #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        background-image: linear-gradient(90deg, #0d6efd, #6610f2);
+        background-size: 200% 100%;
+        animation: progressBarAnim 1.5s ease infinite;
+      }
+
+      .skill-label {
+        font-weight: 500;
+      }
+      @keyframes progressBarAnim {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar-placeholder"></div>
+
+    <div class="main-content">
+      <div class="container py-5">
+        <h2 class="text-center mb-4">My Skills</h2>
+        <div class="row g-4" id="skills-list"></div>
+        <div class="d-flex justify-content-center mt-4">
+          <nav>
+            <ul class="pagination" id="pagination"></ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(function () {
+        $("#navbar-placeholder").load("navbar.html");
+      });
+
+      const SKILL_API =
+        "https://markneilcordero.com/jquery-portfolio-api/public/api/skills";
+      let currentPage = 1;
+
+      function loadSkills(page = 1) {
+        $.ajax({
+          url: `${SKILL_API}?page=${page}`,
+          method: "GET",
+          success: function (response) {
+            const skills = response.data ?? response;
+            let html = "";
+
+            skills.forEach((skill) => {
+              html += `
+                    <div class="col-md-4">
+                        <div class="skill-card">
+                            ${
+                              skill.icon
+                                ? `<i class="${skill.icon} skill-icon"></i>`
+                                : ""
+                            }
+                            <h5 class="skill-label">${skill.name}</h5>
+                            <p class="text-muted">${skill.level ?? ""}</p>
+                            ${
+                              skill.percentage
+                                ? `
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: ${skill.percentage}%;"></div>    
+                                </div>
+                                <small>${skill.percentage}%</small>
+                            `
+                                : ""
+                            }
+                        </div>
+                    </div>
+                `;
+            });
+
+            $("#skills-list").html(html);
+
+            if (response.total && response.last_page) {
+              renderPagination(response.current_page, response.last_page);
+            }
+          },
+          error: function () {
+            $("#skills-list").html(`
+                <div class="col-12">
+                    <div class="alert alert-danger text-center">Failed to load skills.</div>
+                </div>
+            `);
+          },
+        });
+      }
+
+      function renderPagination(current, last) {
+        let pagination = "";
+
+        if (current > 1) {
+          pagination += `<li class="page-item"><a class="page-link" href="#" data-page="${
+            current - 1
+          }">Previous</a></li>`;
+        }
+
+        for (let i = 1; i <= last; i++) {
+          pagination += `
+            <li class="page-item ${i === current ? "active" : ""}">
+                <a class="page-link" href="#" data-page="${i}">${i}</a>
+            </li>
+        `;
+        }
+
+        if (current < last) {
+          pagination += `<li class="page-item"><a class="page-link" href="#" data-page="${
+            current + 1
+          }">Next</a></li>`;
+        }
+
+        $("#pagination").html(pagination);
+      }
+
+      $(document).on("click", ".page-link", function (e) {
+        e.preventDefault();
+        const page = $(this).data("page");
+        if (page && page !== currentPage) {
+          currentPage = page;
+          loadSkills(currentPage);
+        }
+      });
+
+      $(document).ready(function () {
+        loadSkills();
+      });
+
+      $(function () {
+        $("#footer-placeholder").load("footer.html");
+      });
+    </script>
+  </body>
+</html>
