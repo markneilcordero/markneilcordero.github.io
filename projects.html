@@ -33,25 +33,63 @@
         text-align: center;
       }
       .project-card {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         overflow: hidden;
-        transition: transform 0.2s ease-in-out;
+        background: linear-gradient(
+          135deg,
+          #0d6efd,
+          #6610f2
+        ); /* Blue to purple gradient */
+        color: #fff;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
       .project-card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       }
       .project-img {
         height: 200px;
         object-fit: contain;
         width: 100%;
         padding: 16px;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.1
+        ); /* Light overlay for contrast */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       }
       .truncate {
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 7;
         -webkit-box-orient: vertical;
+      }
+      .btn-project-primary {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+        color: #fff !important;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+
+      .btn-project-primary:hover {
+        background: linear-gradient(135deg, #6610f2, #0d6efd);
+        transform: translateY(-1px);
+      }
+
+      .btn-project-outline {
+        background-color: #fff;
+        border: 2px solid #6610f2;
+        color: #6610f2 !important;
+        transition: all 0.3s ease;
+      }
+
+      .btn-project-outline:hover {
+        background: #6610f2;
+        color: #fff !important;
       }
     </style>
   </head>
@@ -110,12 +148,12 @@
   <div class="d-flex justify-content-between">
     ${
       project.link
-        ? `<a href="${project.link}" class="btn btn-primary btn-sm" target="_blank">View Project</a>`
+        ? `<a href="${project.link}" class="btn btn-project-primary btn-sm me-2" target="_blank">View Project</a>`
         : ""
     }
     <a href="project_page.html?id=${
       project.id
-    }" class="btn btn-outline-secondary btn-sm">View Details</a>
+    }" class="btn btn-project-outline btn-sm">View Details</a>
   </div>
 </div>
 
