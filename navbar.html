@@ -1,32 +1,66 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-primary" href="index.html">Mark Neil Cordero</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="index.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="projects.html">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="blogs.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="skills.html">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="gallery.html">Gallery</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-dark" href="contact_form.html">Contact</a>
-          </li>
-        </ul>
-      </div>
+<style>
+  /* Smooth transition on nav links */
+  .navbar-nav .nav-link {
+    transition: all 0.3s ease;
+  }
+
+  /* Hover effect for nav links */
+  .navbar-nav .nav-link:hover {
+    color: #0d6efd !important;
+    text-decoration: none;
+    border-bottom: 2px solid #0d6efd;
+  }
+
+  /* Animated mobile toggler */
+  .navbar-toggler {
+    animation: pulse 2s infinite;
+    border: 1px solid #0d6efd;
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm border-bottom fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-primary" href="index.html">Mark Neil Cordero</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="index.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="projects.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="blogs.html">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="skills.html">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="gallery.html">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="contact_form.html">Contact</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  
+  </div>
+</nav>
+
+<!-- Spacing for fixed-top navbar -->
+<div style="height: 70px;"></div>
