@@ -1,19 +1,36 @@
-<footer class="bg-dark text-light text-center py-4 mt-5">
+<footer class="bg-white text-dark text-center py-4 mt-5 border-top">
     <div class="container">
-        <p class="mb-2">&copy; <span id="currentYear"></span> Mark Neil Cordero. All rights reserved.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="https://github.com/markneilcordero" class="text-light text-decoration-none" target="_blank">
-                <i class="fab fa-github"></i> Github
-            </a>
-            <a href="mailto:mark.neil.u.cordero@gmail.com" class="text-light text-decoration-none">
-                <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="https://www.linkedin.com/in/mark-neil-cordero/" class="text-light text-decoration-none" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-        </div>
+      <p class="mb-2 mb-lg-3 fw-semibold">&copy; <span id="currentYear"></span> Mark Neil Cordero. All rights reserved.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="https://github.com/markneilcordero" class="footer-link" target="_blank">
+          <i class="fab fa-github me-1"></i> Github
+        </a>
+        <a href="mailto:mark.neil.u.cordero@gmail.com" class="footer-link">
+          <i class="fas fa-envelope me-1"></i> Email
+        </a>
+        <a href="https://www.linkedin.com/in/mark-neil-cordero/" class="footer-link" target="_blank">
+          <i class="fab fa-linkedin me-1"></i> LinkedIn
+        </a>
+      </div>
     </div>
-</footer>
-<script>
-document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
+  </footer>
+  
+  <!-- JS to set the year -->
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+  
+  <!-- Additional styling -->
+  <style>
+    .footer-link {
+      color: #0a2540;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease-in-out;
+    }
+  
+    .footer-link:hover {
+      color: #0d6efd; /* Bootstrap sky blue */
+    }
+  </style>
+  
