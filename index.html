@@ -61,6 +61,8 @@
         ); /* Diamond-inspired gradient */
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
       .quick-fact-card:hover {
@@ -68,6 +70,7 @@
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
       }
 
+      /* Diamond Icon Style */
       .quick-fact-icon {
         font-size: 30px;
         margin-bottom: 10px;
@@ -78,6 +81,35 @@
         color: transparent;
       }
 
+      /* Shine Effect */
+      .shine {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.5) 50%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shine-animation 3s infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes shine-animation {
+        0% {
+          left: -75%;
+        }
+        100% {
+          left: 125%;
+        }
+      }
+
       .fun-fact-card {
         background: linear-gradient(to right, #ffae00, #fefe68, #ffae00);
         padding: 20px;
@@ -85,12 +117,44 @@
         color: #212529;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
 
       .fun-fact-card:hover {
         transform: scale(1.03);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
+
+      /* Shine Effect */
+      .shine {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.15) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0.15) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shine-animation 3s infinite;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes shine-animation {
+        0% {
+          left: -75%;
+        }
+        100% {
+          left: 125%;
+        }
+      }
+
       .nav-link:hover {
         color: #0d6efd !important; /* Bootstrap primary (sky blue) */
       }
@@ -378,12 +442,14 @@
           facts.forEach((fact) => {
             factCards += `
           <div class="col">
-            <div class="quick-fact-card h-100 text-center">
-              <div class="quick-fact-icon"><i class="${fact.icon}"></i></div>
-              <h5 class="mb-1">${fact.label}</h5>
-              <p class="mb-0 fw-bold">${fact.value}</p>
-            </div>
-          </div>
+  <div class="quick-fact-card h-100 text-center position-relative overflow-hidden">
+    <div class="quick-fact-icon"><i class="${fact.icon}"></i></div>
+    <h5 class="mb-1">${fact.label}</h5>
+    <p class="mb-0 fw-bold">${fact.value}</p>
+    <div class="shine"></div>
+  </div>
+</div>
+
         `;
           });
           $("#quick-facts").html(factCards);
@@ -403,11 +469,13 @@
           facts.forEach((fact) => {
             funCards += `
         <div class="col">
-          <div class="fun-fact-card h-100 text-center">
-            <i class="${fact.icon} fs-3 mb-2"></i>
-            <h6>${fact.fact}</h6>
-          </div>
-        </div>
+  <div class="fun-fact-card h-100 text-center position-relative overflow-hidden">
+    <i class="${fact.icon} fs-3 mb-2"></i>
+    <h6>${fact.fact}</h6>
+    <div class="shine"></div>
+  </div>
+</div>
+
       `;
           });
           $("#fun-facts").html(funCards);
