@@ -239,6 +239,95 @@
           left: 125%;
         }
       }
+      .contact-card-glow {
+        background: linear-gradient(135deg, #4fd1ff, #007cf0, #4fd1ff);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-card-glow:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      }
+
+      /* Shine Animation Overlay */
+      .shine-overlay {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.5) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shine-slide 3s infinite;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      @keyframes shine-slide {
+        0% {
+          left: -75%;
+        }
+        100% {
+          left: 125%;
+        }
+      }
+
+      .contact-glow {
+        background: linear-gradient(
+          135deg,
+          #84fab0,
+          #8fd3f4
+        ); /* minty-aqua gradient */
+        border: none;
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: #0a2540;
+      }
+
+      .contact-glow:hover {
+        transform: scale(1.01);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Shine overlay animation */
+      .shine-overlay {
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: shine-slide 3s infinite;
+        z-index: 1;
+        pointer-events: none;
+        border-radius: 12px;
+      }
+
+      @keyframes shine-slide {
+        0% {
+          left: -75%;
+        }
+        100% {
+          left: 125%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -273,45 +362,60 @@
 
           <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
             <div class="col">
-              <div class="card h-100 text-center shadow-sm border-0">
-                <div class="card-body">
-                  <i class="fab fa-linkedin fa-2x text-primary mb-2"></i>
-                  <h5 class="card-title">LinkedIn</h5>
-                  <p class="card-text">Connect with me professionally.</p>
+              <div
+                class="card h-100 text-center shadow-sm border-0 contact-card-glow"
+              >
+                <div class="shine-overlay"></div>
+                <div class="card-body position-relative">
+                  <i class="fab fa-linkedin fa-2x text-white mb-2"></i>
+                  <h5 class="card-title text-white">LinkedIn</h5>
+                  <p class="card-text text-white-50">
+                    Connect with me professionally.
+                  </p>
                   <a
                     href="https://www.linkedin.com/in/mark-neil-cordero/"
                     target="_blank"
-                    class="btn btn-outline-primary btn-sm"
+                    class="btn btn-light btn-sm fw-semibold"
                     >Visit Profile</a
                   >
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card h-100 text-center shadow-sm border-0">
-                <div class="card-body">
-                  <i class="fas fa-briefcase fa-2x text-success mb-2"></i>
-                  <h5 class="card-title">OnlineJobs.ph</h5>
-                  <p class="card-text">View my remote work profile.</p>
+              <div
+                class="card h-100 text-center shadow-sm border-0 contact-card-glow"
+              >
+                <div class="shine-overlay"></div>
+                <div class="card-body position-relative">
+                  <i class="fas fa-briefcase fa-2x text-white mb-2"></i>
+                  <h5 class="card-title text-white">OnlineJobs.ph</h5>
+                  <p class="card-text text-white-50">
+                    View my remote work profile.
+                  </p>
                   <a
                     href="https://www.onlinejobs.ph/jobseekers/info/3221278"
                     target="_blank"
-                    class="btn btn-outline-success btn-sm"
+                    class="btn btn-light btn-sm fw-semibold"
                     >View Profile</a
                   >
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card h-100 text-center shadow-sm border-0">
-                <div class="card-body">
-                  <i class="fab fa-github fa-2x text-dark mb-2"></i>
-                  <h5 class="card-title">GitHub</h5>
-                  <p class="card-text">Explore my open-source projects.</p>
+              <div
+                class="card h-100 text-center shadow-sm border-0 contact-card-glow"
+              >
+                <div class="shine-overlay"></div>
+                <div class="card-body position-relative">
+                  <i class="fab fa-github fa-2x text-white mb-2"></i>
+                  <h5 class="card-title text-white">GitHub</h5>
+                  <p class="card-text text-white-50">
+                    Explore my open-source projects.
+                  </p>
                   <a
                     href="https://github.com/markneilcordero"
                     target="_blank"
-                    class="btn btn-outline-dark btn-sm"
+                    class="btn btn-light btn-sm fw-semibold"
                     >View GitHub</a
                   >
                 </div>
@@ -324,8 +428,9 @@
 
           <form
             id="contact-form"
-            class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
+            class="p-4 p-md-5 bg-light border rounded-3 shadow-sm position-relative overflow-hidden contact-glow"
           >
+            <div class="shine-overlay"></div>
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="name" class="form-label fw-semibold"
