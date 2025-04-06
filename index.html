@@ -665,8 +665,15 @@
               message: $("#message").val(),
             },
             success: function (response) {
-              $("#success-msg").text(response.message).fadeIn();
+              $("#success-msg")
+                .removeClass("d-none")
+                .text(response.message)
+                .fadeIn();
               $("#contact-form")[0].reset();
+
+              setTimeout(() => {
+                $("#success-msg").fadeOut().addClass("d-none");
+              }, 5000);
             },
             error: function (xhr) {
               let errorMsg = "Something went wrong.";
@@ -680,7 +687,7 @@
                 });
                 errorMsg += "</ul>";
               }
-              $("#error-msg").html(errorMsg).fadeIn();
+              $("#error-msg").removeClass("d-none").html(errorMsg).fadeIn();
             },
           });
         });
