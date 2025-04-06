@@ -653,7 +653,7 @@
       $(document).ready(function () {
         $("#contact-form").submit(function (e) {
           e.preventDefault();
-          $("#success-msg, #error-msg").hide();
+          $("#success-msg, #error-msg").addClass("d-none").hide();
 
           $.ajax({
             url: "https://markneilcordero.com/jquery-portfolio-api/public/api/contact",
