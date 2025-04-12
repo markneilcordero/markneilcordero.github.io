@@ -668,6 +668,12 @@
           e.preventDefault();
           $("#success-msg, #error-msg").addClass("d-none").hide();
 
+          const token = grecaptcha.getResponse(); // ✅ Moved inside here
+    if (!token) {
+      alert("Please verify that you're not a robot.");
+      return;
+    }
+
           $.ajax({
             url: "https://markneilcordero.com/jquery-portfolio-api/public/api/contact",
             method: "POST",
@@ -678,7 +684,7 @@
               message: $("#message").val(),
               my_name: $("input[name='my_name']").val(),
               my_time: $("#my_time").val(),
-              'g-recaptcha-response': grecaptcha.getResponse(),
+              'g-recaptcha-response': token,
             },
             success: function (response) {
               $("#success-msg")
@@ -686,7 +692,7 @@
                 .text(response.message)
                 .fadeIn();
               $("#contact-form")[0].reset();
-
+              grecaptcha.reset();
               setTimeout(() => {
                 $("#success-msg").fadeOut().addClass("d-none");
               }, 5000);
