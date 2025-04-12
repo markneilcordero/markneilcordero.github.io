@@ -13,11 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <script
-      src="https://www.google.com/recaptcha/enterprise.js"
-      async
-      defer
-    ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
       html,
       body {
@@ -462,16 +458,16 @@
                 ></textarea>
               </div>
               <div class="col-12">
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"
-                ></div>
                 <button
                   type="submit"
                   class="btn btn-primary w-100 py-2 fw-semibold"
                 >
                   <i class="fas fa-paper-plane me-2"></i>Send Message
                 </button>
+                <div
+                  class="g-recaptcha"
+                  data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"
+                ></div>
               </div>
             </div>
           </form>
