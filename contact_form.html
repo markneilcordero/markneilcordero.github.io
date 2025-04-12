@@ -224,6 +224,8 @@
               ></textarea>
             </div>
 
+            <div class="g-recaptcha" data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"></div>
+
             <div class="col-12">
               <button
                 type="submit"
@@ -264,6 +266,7 @@
               message: $("#message").val(),
               my_name: $("input[name='my_name']").val(),
               my_time: $("#my_time").val(),
+              g_recaptcha_response: grecaptcha.getResponse(),
             },
             success: function (response) {
               $("#success-msg").text(response.message).fadeIn();
@@ -291,5 +294,6 @@
         $("#footer-placeholder").load("footer.html");
       });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>
