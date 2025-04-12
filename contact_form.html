@@ -165,8 +165,9 @@
           id="contact-form"
           class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
         >
+        <div class="g-recaptcha" data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"></div>
         <input type="text" name="my_name" style="display:none" tabindex="-1" autocomplete="off">
-<input type="hidden" name="my_time" id="my_time">
+        <input type="hidden" name="my_time" id="my_time">
 
           <div class="row g-3">
             <div class="col-md-6">
@@ -223,8 +224,6 @@
                 placeholder="Write your message here..."
               ></textarea>
             </div>
-
-            <div class="g-recaptcha" data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"></div>
 
             <div class="col-12">
               <button
@@ -294,6 +293,6 @@
         $("#footer-placeholder").load("footer.html");
       });
     </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js" async defer></script>
   </body>
 </html>
