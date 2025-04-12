@@ -13,6 +13,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <script
+      src="https://www.google.com/recaptcha/enterprise.js"
+      async
+      defer
+    ></script>
     <style>
       html,
       body {
@@ -396,6 +401,18 @@
             id="contact-form"
             class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
           >
+            <div
+              class="g-recaptcha"
+              data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"
+            ></div>
+            <input
+              type="text"
+              name="my_name"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+            />
+            <input type="hidden" name="my_time" id="my_time" />
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="name" class="form-label fw-semibold"
@@ -663,6 +680,9 @@
               email: $("#email").val(),
               subject: $("#subject").val(),
               message: $("#message").val(),
+              my_name: $("input[name='my_name']").val(),
+              my_time: $("#my_time").val(),
+              g_recaptcha_response: grecaptcha.getResponse(),
             },
             success: function (response) {
               $("#success-msg")
