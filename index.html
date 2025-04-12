@@ -669,10 +669,10 @@
           $("#success-msg, #error-msg").addClass("d-none").hide();
 
           const token = grecaptcha.getResponse(); // ✅ Moved inside here
-    if (!token) {
-      alert("Please verify that you're not a robot.");
-      return;
-    }
+          if (!token) {
+            alert("Please verify that you're not a robot.");
+            return;
+          }
 
           $.ajax({
             url: "https://markneilcordero.com/jquery-portfolio-api/public/api/contact",
@@ -684,7 +684,11 @@
               message: $("#message").val(),
               my_name: $("input[name='my_name']").val(),
               my_time: $("#my_time").val(),
-              'g-recaptcha-response': token,
+              "g-recaptcha-response": token,
+            },
+            headers: {
+              Accept: "application/json", // ✅ Laravel expects this for JSON validation errors
+              "X-Requested-With": "XMLHttpRequest", // ✅ Helps Laravel know it's an AJAX call
             },
             success: function (response) {
               $("#success-msg")
