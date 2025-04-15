@@ -13,11 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <script
-      src="https://www.google.com/recaptcha/enterprise.js"
-      async
-      defer
-    ></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
       html,
       body {
@@ -170,7 +166,6 @@
           id="contact-form"
           class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
         >
-
           <div class="row g-3">
             <div class="col-md-6">
               <label for="name" class="form-label fw-semibold">
@@ -263,10 +258,10 @@
           const token = grecaptcha.getResponse();
 
           // ✅ Add this: Alert if reCAPTCHA is not checked
-  if (!token) {
-    alert("Please verify that you're not a robot.");
-    return;
-  }
+          if (!token) {
+            alert("Please verify that you're not a robot.");
+            return;
+          }
 
           $.ajax({
             url: "https://markneilcordero.com/jquery-portfolio-api/public/api/contact",
