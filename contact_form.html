@@ -99,6 +99,17 @@
           background-position: center center;
         }
       }
+
+      .recaptcha-wrapper {
+        background-color: #f8f9fa;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid #dee2e6;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
@@ -229,10 +240,12 @@
               >
                 <i class="fas fa-paper-plane me-2"></i>Send Message
               </button>
-              <div
-                class="g-recaptcha"
-                data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"
-              ></div>
+              <div class="recaptcha-wrapper text-center my-3">
+                <div
+                  class="g-recaptcha d-inline-block"
+                  data-sitekey="6LeUYhUrAAAAANtajCaVAKx7RA_r6HLbWBVXxiba"
+                ></div>
+              </div>
             </div>
           </div>
         </form>
