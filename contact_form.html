@@ -170,14 +170,6 @@
           id="contact-form"
           class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
         >
-          <input
-            type="text"
-            name="my_name"
-            style="display: none"
-            tabindex="-1"
-            autocomplete="off"
-          />
-          <input type="hidden" name="my_time" id="my_time" />
 
           <div class="row g-3">
             <div class="col-md-6">
@@ -262,7 +254,6 @@
       });
 
       $(document).ready(function () {
-        $("#my_time").val(Math.floor(Date.now() / 1000));
         $("#contact-form").submit(function (e) {
           e.preventDefault();
 
@@ -277,13 +268,17 @@
               email: $("#email").val(),
               subject: $("#subject").val(),
               message: $("#message").val(),
-              my_name: $("input[name='my_name']").val(),
-              my_time: $("#my_time").val(),
-              g_recaptcha_response: grecaptcha.getResponse(),
+              "g-recaptcha-response": grecaptcha.getResponse(),
             },
+            headers: {
+              Accept: "application/json",
+              "X-Requested-With": "XMLHttpRequest",
+            },
+
             success: function (response) {
               $("#success-msg").text(response.message).fadeIn();
               $("#contact-form")[0].reset();
+              grecaptcha.reset();
             },
             error: function (xhr) {
               let errorMsg = "Something went wrong.";
