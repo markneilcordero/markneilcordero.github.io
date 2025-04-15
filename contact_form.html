@@ -260,6 +260,14 @@
           $("#success-msg").hide();
           $("#error-msg").hide();
 
+          const token = grecaptcha.getResponse();
+
+          // ✅ Add this: Alert if reCAPTCHA is not checked
+  if (!token) {
+    alert("Please verify that you're not a robot.");
+    return;
+  }
+
           $.ajax({
             url: "https://markneilcordero.com/jquery-portfolio-api/public/api/contact",
             method: "POST",
@@ -268,7 +276,7 @@
               email: $("#email").val(),
               subject: $("#subject").val(),
               message: $("#message").val(),
-              "g-recaptcha-response": grecaptcha.getResponse(),
+              "g-recaptcha-response": token, // ✅ Correct key
             },
             headers: {
               Accept: "application/json",
