@@ -398,14 +398,6 @@
             class="p-4 p-md-5 bg-light border rounded-3 shadow-sm"
             method="POST"
           >
-            <input
-              type="text"
-              name="my_name"
-              style="display: none"
-              tabindex="-1"
-              autocomplete="off"
-            />
-            <input type="hidden" name="valid_from" id="valid_from" />
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="name" class="form-label fw-semibold"
@@ -483,10 +475,6 @@
     <script>
       $(function () {
         $("#navbar-placeholder").load("navbar.html");
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        const now = Math.floor(Date.now() / 1000); // seconds (what Spatie expects)
-        $("#valid_from").val(now);
       });
 
       $(document).ready(function () {
@@ -687,8 +675,6 @@
               email: $("#email").val(),
               subject: $("#subject").val(),
               message: $("#message").val(),
-              my_name: $("#my_name").val(), // Honeypot text field
-              valid_from: $("#valid_from").val(),
               "g-recaptcha-response": token,
             },
             headers: {
