@@ -597,14 +597,18 @@
     <div class="card-body d-flex flex-column">
       <h5 class="card-title fw-bold mb-3">${project.title}</h5>
       <p class="card-text flex-grow-1" style="line-height: 1.6;">${project.description}</p>
-      <a href="${project.link}" class="btn btn-light text-dark mt-3 fw-semibold" target="_blank">
+      ${
+        project.technologies // Check if stack information exists
+          ? `<p class="card-text mt-2 mb-3"><small><strong>Stack:</strong> ${project.technologies}</small></p>`
+          : ""
+      }
+      <a href="${project.link}" class="btn btn-light text-dark mt-auto fw-semibold" target="_blank">
         View Project
       </a>
     </div>
     <div class="shine"></div>
   </div>
 </div>
-
         `;
               $("#featured-projects").append(projectCard);
             });

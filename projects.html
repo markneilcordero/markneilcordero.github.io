@@ -177,13 +177,13 @@
       }" class="card-img-top project-img" alt="${project.title}">
       <div class="card-body">
   <h5 class="card-title">${project.title}</h5>
-  <p class="card-text truncate">${project.description}</p>
+  <p class="card-text truncate flex-grow-1">${project.description}</p>
   ${
     project.stack
-      ? `<p class="mb-2"><strong>Stack:</strong> ${project.stack}</p>`
+      ? `<p class="card-text"><small class="text-white-50"><strong>Technologies:</strong> ${project.stack}</small></p>`
       : ""
   }
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between mt-auto">
     ${
       project.link
         ? `<a href="${project.link}" class="btn btn-project-primary btn-sm me-2" target="_blank">View Project</a>`
